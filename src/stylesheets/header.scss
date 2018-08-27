@@ -1,0 +1,68 @@
+
+@import "variables.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  a {
+    padding: 0 1em;
+    text-decoration: none;
+
+    h3 {
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  .li a::before,
+  .li a::after {
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 0.1em;
+    content: '';
+    background: $purple;
+    transition: all 0.3s;
+  }
+
+  .li a::before {
+    left: 0px;
+    top: 0px;
+  }
+
+  .li a::after {
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .li a:hover::before,
+  .li a:hover::after {
+    opacity: 1;
+    width: 100%;
+  }
+
+  ul {
+    display: flex;
+    padding: 0.5em;
+
+    li {
+      list-style: none;
+      margin: 0 1em;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      font-weight: lighter;
+
+      a {
+        text-decoration: none;
+        position: relative;
+        padding: 0.4em 0;
+        color: $purple;
+      }
+    }
+  }
+}

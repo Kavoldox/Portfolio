@@ -1,0 +1,24 @@
+
+@import "variables.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+html {
+  height: 100%;
+}
+
+body {
+  // background: linear-gradient(135deg, $white, $white);
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: $dark;
+  h2, h1 {
+    color: $purple;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: lighter;
+  }
+
+  h1 {
+    font-size: 8em;
+  }
+}

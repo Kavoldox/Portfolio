@@ -1,0 +1,63 @@
+@import "variables.scss";
+
+
+.about {
+
+  h5 {
+    font-size: 1.5em;
+  }
+
+  &-pres {
+    background-color: $purple;
+    height: 5em;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    padding: 0.5em 0 8em;
+  }
+
+  &-skills {
+    border: 1px solid $purple;
+    background-color: white;
+    position: relative;
+    border-radius: 1em;
+    bottom: 15em;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+
+    &-title {
+      margin: 1em 0;
+
+      h4 {
+        padding: 1em 0;
+        font-size: 1.5em;
+        font-weight: bolder;
+      }
+    }
+
+    &-dev {
+      border-right: 1px solid $purple;
+      border-left: 1px solid $purple;
+      width: 33%;
+      padding: 4em;
+    }
+
+    &-design {
+      width: 33%;
+      padding: 4em;
+    }
+
+    &-tools {
+      width: 33%;
+      padding: 4em;
+    }
+  }
+}
+
+.skills {
+  &-skill {
+    margin: 2em 0;
+  }
+}
