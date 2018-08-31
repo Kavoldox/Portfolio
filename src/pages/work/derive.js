@@ -5,7 +5,7 @@ import carouselData from '../../utils/data.js';
 class OclockStudentNews extends React.Component {
 
   render() {
-    const datas = carouselData.filter(datas => datas.title === `O'Clock Student News`)
+    const datas = carouselData.filter(datas => datas.title === `A la dérive`)
     return(
       <PageTransition
     transitionTime={500}

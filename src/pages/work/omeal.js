@@ -5,7 +5,7 @@ import carouselData from '../../utils/data.js';
 class Omeal extends React.Component {
 
   render() {
-    const datas = carouselData.filter(datas => datas.title === 'OMeal')
+    const datas = carouselData.filter(datas => datas.title === 'MealOclock')
     return(
       <PageTransition
     transitionTime={500}

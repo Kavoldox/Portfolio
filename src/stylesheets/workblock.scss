@@ -1,4 +1,5 @@
 @import "/variables.scss";
+
 .work {
   width: 100%;
   margin: auto;
@@ -17,11 +18,15 @@
     background: white;
     transition: color 1s;
     font-family: 'Open Sans Condensed', sans-serif;
-    color: $purple;
-    border: 1px solid $purple;
+    color: $sec;
+    border: 1px solid $sec;
     font-size: 2em;
     padding: 0.2em 3em;
     cursor: pointer;
+
+    @media screen and (max-width: 1024px) {
+      padding: 0.1em 1.5em;
+    }
   }
 }
 
@@ -29,50 +34,96 @@
   display: flex;
   flex-direction: row;
   // border: 1px solid $grey;
-  padding: 2em;
+  padding: 2em 3em 0;
   overflow: hidden;
   max-height: 792px;
-  margin-bottom: 3em;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    padding: 0;
+    margin: 1em 0 0 0;
     flex-direction: column;
+    align-items: center;
     max-height: none;
-    padding: 1em;
   }
 
   &-left {
     width: 50%;
     position: relative;
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1024px) {
       width: 100%;
     }
 
     &-info {
       padding: 1em 5em 0em 1em;
       background: white;
-
-      &-number p {
-        color: $purple;
-        font-weight: bold;
-        margin: 0;
+      @media screen and (max-width: 1024px) {
+        width: 90%;
+        padding: 0;
+        margin: auto;
       }
+
+      &-number {
+
+        .sliding {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          margin-bottom: 2em;
+          color: $purple;
+        }
+
+        &-number {
+          color: $purple;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        .index {
+          overflow: hidden;
+          font-weight: bolder;
+          display: flex;
+          font-size: 1.5em;
+
+          :first-child {
+            padding-right: 0.2em;
+            color: $sec;
+          }
+
+          :last-child {
+            color: $purple;
+          }
+
+          @media screen and (max-width: 1024px) {
+            font-size: 1em;
+          }
+        }
+      }
+
 
       &-info {
         overflow: hidden;
+        font-size: 1.5em;
+        @media screen and (max-width: 1024px) {
+          font-size: 1em;
+        }
       }
 
       &-title {
         overflow: hidden;
-        margin-bottom: 5em;
-        @media screen and (max-width: 700px) {
+        margin: -2em 0 3.5em;
+        @media screen and (max-width: 1024px) {
           margin-bottom: 1em;
         }
 
         h2 {
+          overflow: hidden;
           font-size: 6em;
           font-weight: lighter;
-          @media screen and (max-width: 700px) {
-            margin: 0.5em 0;
+          @media screen and (max-width: 1024px) {
+            margin: 0.2em 0 0.5em;
+            font-size: 3em;
           }
         }
 
@@ -80,6 +131,10 @@
           width: 20%;
           height: 0.5em;
           background: $purple;
+          @media screen and (max-width: 1024px) {
+            height: 0.2em;
+            width: 30%;
+          }
         }
 
       }
@@ -87,6 +142,13 @@
       .info-block {
         display: flex;
         overflow: hidden;
+        font-size: 1.5em;
+
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+          padding: 0;
+          font-size: 1em;
+        }
 
         .type {
           overflow: hidden;
@@ -95,22 +157,31 @@
 
         .info-title {
           color: $purple;
-
         }
 
         .info-techno {
           list-style: none;
           padding: 0;
 
+          ul {
+            @media screen and (max-width: 1024px) {
+              margin: 0;
+            }
+          }
+
           li {
             overflow: hidden;
             margin-bottom: 0.5em;
+
+            @media screen and (max-width: 1024px) {
+              margin: 0;
+            }
           }
         }
       }
 
-      p {
-        font-size: 1.5em;
+      p, li {
+        font-size: 1em;
         color: $grey;
       }
     }
@@ -119,8 +190,9 @@
 
   &-right {
     width: 50%;
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1024px) {
       width: 100%;
+      margin: auto;
     }
 
     img {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Workblock from "../components/workblock.js";
+import ScrollInfo from "../components/scrollInfo.js";
 import PageTransition from 'gatsby-plugin-page-transitions'
 import anime from 'animejs'
 import Link from 'gatsby-link'
@@ -9,6 +10,9 @@ class Carousel extends React.Component {
     activeIndex: 0,
   }
 
+  // animArrow = () => {
+  // }
+
 goToSlide(index) {
   this.setState({
     activeIndex: index,
@@ -16,10 +20,7 @@ goToSlide(index) {
 }
 
 onWheel = (e) => {
-  if (e.deltaY > 0) {
-    this.goToPrevSlide(e)
-  }
-  this.goToNextSlide(e);
+  e.deltaY < 0 ? this.goToPrevSlide(e) : this.goToNextSlide(e);
 }
 
 goToPrevSlide = (e) => {
@@ -29,16 +30,8 @@ goToPrevSlide = (e) => {
     const slides = this.props.carouselData;
     const slidesLength = slides.length;
 
-    if (index < 1) {
-      index = slidesLength;
-    }
-
-    --index;
-
-    this.animate;
-
     this.setState({
-      activeIndex: index
+      activeIndex: index === 0 ? index = slidesLength - 1 : index - 1
     });
 }
 
@@ -47,16 +40,11 @@ goToNextSlide = (e) => {
 
    let index = this.state.activeIndex;
    const slides = this.props.carouselData;
-   const slidesLength = slides.length - 1;
+   const slidesLength = slides.length;
 
-   if (index === slidesLength) {
-     index = -1;
-   }
-
-   ++index;
 
    this.setState({
-     activeIndex: index
+     activeIndex: index === slidesLength - 1 ? 0 : index +1
    });
  }
 
@@ -65,12 +53,14 @@ goToNextSlide = (e) => {
     return(
       <PageTransition>
         <div className="work">
-          <div className="work-block" onWheel={this.onWheel}>
+          <ScrollInfo />
+          <div onWheel={this.onWheel}>
               {this.props.carouselData.map((data, index) => (
                 <Workblock
-                  key={index}
+                  key={data.title}
                   index={index}
                   length={length}
+                  onWheel={this.onWheel}
                   activeIndex={this.state.activeIndex}
                   {...data}
                 />

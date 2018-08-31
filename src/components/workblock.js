@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from "gatsby-link";
 import anime from 'animejs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import "../stylesheets/workblock.scss"
 import Workinfo from '../components/workinfo.js'
@@ -15,8 +17,20 @@ import Workinfo from '../components/workinfo.js'
 class Workblock extends React.Component {
 
   state = {
-    on: false
+    on: false,
+    width: window.innerWidth,
   }
+
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
 
   animate = (back, color, border) => {
     anime({
@@ -28,16 +42,19 @@ class Workblock extends React.Component {
  }
 
  hoverButton = () => {
-  this.animate('linear-gradient(to top, #65799b, #5e2563)', '#FFF', ['0em','2em']);
+  this.animate('#df3940', '#FFF', ['0em','2em']);
  }
 
  endHoverButton = () => {
-  this.animate('#FFF', '#3d3560', '0');
+  this.animate('#FFF', '#df3940', '0');
  }
 
   render() {
-    const { title, resume, type, techno, image, index, activeIndex, length, path } = this.props
+    const { title, resume, type, techno, image, index, activeIndex, length, path, onWheel } = this.props;
+    const { width } = this.state;
+    const isMobile = width <= 500;
     return(
+
       <div className={
         index == activeIndex ? "carousel carousel-active"
         : "carousel"
@@ -47,7 +64,45 @@ class Workblock extends React.Component {
           <div className="workblock-left">
             <div className="workblock-left-info">
               <div className="workblock-left-info-number">
-                <p>{activeIndex + 1} / {length}</p>
+                { isMobile ?
+                  <div className="sliding">
+                    <FontAwesomeIcon
+                      icon='arrow-left'
+                      transform="grow-8"
+                      className="burger"
+                      onClick={onWheel}
+                    />
+                    <div className="index">
+                      <CSSTransition
+                        in={activeIndex == index}
+                        timeout={1000}
+                        classNames="example"
+                        unmountOnExit
+                        >
+                          <p>{activeIndex + 1}</p>
+                        </CSSTransition>
+                      <p> / {length}</p>
+                    </div>
+                    <FontAwesomeIcon
+                      icon='arrow-right'
+                      transform="grow-8"
+                      className="burger"
+                      onClick={onWheel}
+                    />
+                  </div>
+                  :
+                  <div className="index">
+                    <CSSTransition
+                      in={activeIndex == index}
+                      timeout={1000}
+                      classNames="example"
+                      unmountOnExit
+                      >
+                        <p>{activeIndex + 1}</p>
+                      </CSSTransition>
+                    <p> / {length}</p>
+                  </div>
+                }
               </div>
               <div className="workblock-left-info-title">
                 <CSSTransition
@@ -119,7 +174,7 @@ class Workblock extends React.Component {
                 unmountOnExit
                 >
                 <div>
-                  <img src={image}/>
+                  <img src={require(`../utils/work/${image}.jpg`)}/>
                 </div>
               </CSSTransition>
           </div>
@@ -127,7 +182,6 @@ class Workblock extends React.Component {
         <Link
           to={{
             pathname: `/work/${path}`,
-            props: this.props,
           }}
           >
             <button className="button" onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>Voir</button>

@@ -8,10 +8,23 @@ html {
   height: 100%;
 }
 
+.newClassToBody {
+  background-color: $white;
+  background-size: cover;
+
+  h1 {
+    color: $purple;
+  }
+}
+
 body {
   // background: linear-gradient(135deg, $white, $white);
   font-family: 'Open Sans Condensed', sans-serif;
   color: $dark;
+
+  .index {
+  }
+
   h2, h1 {
     color: $purple;
     font-family: 'Abril Fatface', cursive;
@@ -20,5 +33,8 @@ body {
 
   h1 {
     font-size: 8em;
+    @media screen and (max-width: 1000px) {
+      font-size: 5em;
+    }
   }
 }

@@ -1,0 +1,14 @@
+@import "/variables.scss";
+
+.scrollInfo {
+  text-align: center;
+  z-index: 9999;
+  color: $sec;
+  font-size: 1.5em;
+  position: absolute;
+  left: calc(50% - 103px);
+  top: 3em;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
