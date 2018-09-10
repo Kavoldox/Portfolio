@@ -10,9 +10,6 @@ class Carousel extends React.Component {
     activeIndex: 0,
   }
 
-  // animArrow = () => {
-  // }
-
 goToSlide(index) {
   this.setState({
     activeIndex: index,
@@ -57,7 +54,7 @@ goToNextSlide = (e) => {
           <div onWheel={this.onWheel}>
               {this.props.carouselData.map((data, index) => (
                 <Workblock
-                  key={data.title}
+                  key={data.id}
                   index={index}
                   length={length}
                   onWheel={this.onWheel}

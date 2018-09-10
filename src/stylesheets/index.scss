@@ -11,6 +11,7 @@ html {
 .newClassToBody {
   background-color: $white;
   background-size: cover;
+  overflow: hidden;
 
   h1 {
     color: $purple;

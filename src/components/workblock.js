@@ -2,16 +2,10 @@ import React from 'react'
 import Link from "gatsby-link";
 import anime from 'animejs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 import "../stylesheets/workblock.scss"
-import Workinfo from '../components/workinfo.js'
-// const lol = anime({
-//   targets: '.button',
-//   backgroundColor: '#3d3560',
-//   color: '#FFF',
-//   borderRadius: ['0em', '2em'],
-// });
+
 
 
 class Workblock extends React.Component {
@@ -49,6 +43,10 @@ class Workblock extends React.Component {
   this.animate('#FFF', '#df3940', '0');
  }
 
+ mount = () => {
+   this.setState({ mounted : !this.state.mounted})
+ }
+
   render() {
     const { title, resume, type, techno, image, index, activeIndex, length, path, onWheel } = this.props;
     const { width } = this.state;
@@ -59,6 +57,7 @@ class Workblock extends React.Component {
         index == activeIndex ? "carousel carousel-active"
         : "carousel"
       }
+      onWheel={this.mount}
       >
         <div className="workblock">
           <div className="workblock-left">
@@ -72,7 +71,7 @@ class Workblock extends React.Component {
                       className="burger"
                       onClick={onWheel}
                     />
-                    <div className="index">
+                    <div className="activeindex">
                       <CSSTransition
                         in={activeIndex == index}
                         timeout={1000}
@@ -91,7 +90,7 @@ class Workblock extends React.Component {
                     />
                   </div>
                   :
-                  <div className="index">
+                  <div className="activeindex">
                     <CSSTransition
                       in={activeIndex == index}
                       timeout={1000}

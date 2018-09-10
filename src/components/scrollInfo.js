@@ -3,6 +3,10 @@ import anime from 'animejs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../stylesheets/scrollinfo.scss"
 
+const Time = (selector) => {
+  document.querySelector(selector).style.opacity = 0;
+}
+
 class ScrollInfo extends React.Component {
 
   componentDidMount() {
