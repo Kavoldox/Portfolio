@@ -16,6 +16,8 @@ export default ({ children }) =>
     </header>
     {children()}
     <footer>
-      lol
+      <span>
+        Copyright &copy; Timothé Gosset - {(new Date()).getFullYear()}
+      </span>
     </footer>
   </div>

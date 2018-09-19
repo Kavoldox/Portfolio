@@ -1,11 +1,14 @@
 import React from 'react';
 import Workblock from "../components/workblock.js";
 import ScrollInfo from "../components/scrollInfo.js";
+import Button from "./button.js"
 import PageTransition from 'gatsby-plugin-page-transitions'
 import anime from 'animejs'
 import Link from 'gatsby-link'
 
+
 class Carousel extends React.Component {
+
   state = {
     activeIndex: 0,
   }
@@ -21,6 +24,7 @@ onWheel = (e) => {
 }
 
 goToPrevSlide = (e) => {
+
   e.preventDefault();
 
     let index = this.state.activeIndex;
@@ -38,7 +42,6 @@ goToNextSlide = (e) => {
    let index = this.state.activeIndex;
    const slides = this.props.carouselData;
    const slidesLength = slides.length;
-
 
    this.setState({
      activeIndex: index === slidesLength - 1 ? 0 : index +1
@@ -61,6 +64,7 @@ goToNextSlide = (e) => {
                   activeIndex={this.state.activeIndex}
                   {...data}
                 />
+
               ))}
             </div>
           </div>

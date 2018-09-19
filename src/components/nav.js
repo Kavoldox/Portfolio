@@ -46,12 +46,14 @@ class Nav extends React.Component {
           <Link to="/">
             <h3>Portfolio</h3>
           </Link>
-          <FontAwesomeIcon
-            icon={ open ? 'times' : 'bars' }
-            transform="grow-10"
-            className={burgerClasses}
-            onClick={this.openNav}
-          />
+          <div className="header-nav-icon">
+            <FontAwesomeIcon
+              icon={ open ? 'times' : 'bars' }
+              transform="grow-10"
+              className={burgerClasses}
+              onClick={this.openNav}
+            />
+          </div>
         </div>
         <div className={currentClassNames}>
             <ul className="li listlink" onClick={this.openNav}>

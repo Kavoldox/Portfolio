@@ -6,7 +6,7 @@
   color: $grey;
   font-size: 1.5em;
   position: absolute;
-  left: calc(50% - 103px);
+  left: calc(50% - 2em);
   top: 3em;
   @media screen and (max-width: 1024px) {
     display: none;

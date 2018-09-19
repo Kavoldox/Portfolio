@@ -4,26 +4,39 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
-html {
-  height: 100%;
-}
+// html {
+//   height: 100%;
+// }
 
 .newClassToBody {
   background-color: $white;
   background-size: cover;
-  overflow: hidden;
-
-  h1 {
-    color: $purple;
   }
-}
 
 body {
   // background: linear-gradient(135deg, $white, $white);
   font-family: 'Open Sans Condensed', sans-serif;
   color: $dark;
+  margin: 0;
 
   .index {
+    margin: 3em auto;
+    .title-h1, .title-span, .title-pro {
+      color: $purple;
+      font-size: 10em;
+      text-align: center;
+      font-family: 'Abril Fatface', cursive;
+      font-weight: lighter;
+      @media screen and (max-width: 1000px) {
+        font-size: 3em;
+      }
+    }
+    .title-span {
+      display: block;
+    }
+    .title-pro {
+      display: none;
+    }
   }
 
   h2, h1 {
@@ -34,8 +47,25 @@ body {
 
   h1 {
     font-size: 8em;
-    @media screen and (max-width: 1000px) {
-      font-size: 5em;
-    }
+  }
+
+  footer {
+    text-align: center;
+    margin: 2em auto;
+  }
+}
+
+.button {
+  background: white;
+  transition: color 1s;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: $sec;
+  border: 1px solid $sec;
+  font-size: 2em;
+  padding: 0.2em 3em;
+  cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0.1em 1.5em;
   }
 }

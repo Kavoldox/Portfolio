@@ -4,6 +4,7 @@ import anime from 'animejs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
+import Button from "./button.js"
 import "../stylesheets/workblock.scss"
 
 
@@ -14,6 +15,7 @@ class Workblock extends React.Component {
     on: false,
     width: window.innerWidth,
   }
+
 
   componentWillMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
@@ -26,23 +28,6 @@ class Workblock extends React.Component {
     this.setState({ width: window.innerWidth });
   };
 
-  animate = (back, color, border) => {
-    anime({
-      targets: '.button',
-      backgroundColor: back,
-      color: color,
-      borderRadius: border,
-    });
- }
-
- hoverButton = () => {
-  this.animate('#df3940', '#FFF', ['0em','2em']);
- }
-
- endHoverButton = () => {
-  this.animate('#FFF', '#df3940', '0');
- }
-
  mount = () => {
    this.setState({ mounted : !this.state.mounted})
  }
@@ -53,11 +38,13 @@ class Workblock extends React.Component {
     const isMobile = width <= 500;
     return(
 
+      // setTimeout(() => "carousel-active", 1000)
+      // : setTimeout(() => "carousel", 1000)
+
       <div className={
-        index == activeIndex ? "carousel carousel-active"
-        : "carousel"
+        index == activeIndex ? "carousel-active"
+        : "carousel-off"
       }
-      onWheel={this.mount}
       >
         <div className="workblock">
           <div className="workblock-left">
@@ -113,7 +100,7 @@ class Workblock extends React.Component {
                     <h2>{title}</h2>
                   </CSSTransition>
                   <CSSTransition
-                    in={activeIndex === index}
+                    in={activeIndex == index}
                     timeout={1000}
                     classNames="barre"
                     unmountOnExit
@@ -123,7 +110,7 @@ class Workblock extends React.Component {
                 </div>
                 <div className="workblock-left-info-info">
                   <CSSTransition
-                    in={activeIndex === index}
+                    in={activeIndex == index}
                     timeout={2000}
                     classNames="example"
                     unmountOnExit
@@ -137,7 +124,7 @@ class Workblock extends React.Component {
                   <div className="type">
                     <p className="info-title">Type</p>
                     <CSSTransition
-                      in={activeIndex === index}
+                      in={activeIndex == index}
                       timeout={1000}
                       classNames="example"
                       unmountOnExit
@@ -148,14 +135,14 @@ class Workblock extends React.Component {
                     <div>
                       <p className="info-title">Technos</p>
                       <CSSTransition
-                        in={activeIndex === index}
+                        in={activeIndex == index}
                         timeout={1000}
                         classNames="example"
                         unmountOnExit
                         >
                       <ul className="info-techno">
-                        {techno.map(tech => (
-                          <li>
+                        {techno.map((tech, i) => (
+                          <li key={i}>
                             {tech}
                           </li>
                         ))}
@@ -167,7 +154,7 @@ class Workblock extends React.Component {
             </div>
             <div className="workblock-right">
               <CSSTransition
-                in={activeIndex === index}
+                in={activeIndex == index}
                 timeout={1000}
                 classNames="image"
                 unmountOnExit
@@ -178,13 +165,7 @@ class Workblock extends React.Component {
               </CSSTransition>
           </div>
         </div>
-        <Link
-          to={{
-            pathname: `/work/${path}`,
-          }}
-          >
-            <button className="button" onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>Voir</button>
-          </Link>
+        <Button path={path} name="Voir"/>
       </div>
     )
   }

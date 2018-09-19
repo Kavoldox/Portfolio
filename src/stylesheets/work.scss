@@ -3,6 +3,9 @@
 .index {
   width: 100%;
   margin: auto;
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+  }
 
   h4 {
     font-size: 2.5em;
@@ -18,18 +21,23 @@
 
   h2 {
     font-size: 5em;
-    margin: 0.5em 1em;
+    margin: 1em 1em;
+    @media screen and (max-width: 1024px) {
+      font-size: 2.5em;
+      margin: 1em 0.5em;
+    }
   }
 }
 
 .main {
   display: flex;
   justify-content: space-around;
-  width: 80%;
+  width: 50%;
   margin: 3em auto 0;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
+    width: 90%;
   }
 
   &-right {
@@ -46,9 +54,13 @@
       top: -3.5em;
       right: 2em;
       color: $grey;
-      font-size: 1.5em;
+      font-size: 2em;
       width: 80%;
       margin: 1em auto;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 1.5em;
+      }
 
       a {
         margin-left: 0.8em;
@@ -75,9 +87,10 @@
 
   &-left {
     img {
-      max-width: 100%;
+      width: 80em;
       margin: auto;
       @media screen and (max-width: 1024px) {
+        width: 100%;
         margin-bottom: 1em;
       }
     }
@@ -92,13 +105,23 @@
 }
 
 .infos {
-  width: 100%;
+  width: 70%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column-reverse;
+    margin: 2em auto;
+    width: 100%;
+  }
 
   &-infos {
     padding: 5em 15em;
+    @media screen and (max-width: 1024px) {
+      padding: 1em;
+      margin: 0 1em;
+    }
 
     ul {
       list-style: none;
@@ -108,45 +131,244 @@
     h4 {
       font-family: 'Abril Fatface', cursive;
       font-weight: lighter;
+      @media screen and (max-width: 1024px) {
+        font-size: 1.8em;
+      }
     }
   }
 
   &-img {
     width: 50%;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
     img {
       max-width: 100%;
     }
   }
 }
 
+.resp {
+  margin-bottom: 10em;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 5em;
+  }
+
+  &-pics {
+    width: 90%;
+    margin: auto;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      margin: auto;
+    }
+
+    .info-pics {
+      overflow: hidden;
+      .mac {
+        width: 75em;
+        position: relative;
+        top: 50em;
+        left: 12em;
+        @media screen and (max-width: 1024px) {
+          width: 90%;
+          left: 1em;
+          margin: auto;
+        }
+      }
+      .tab {
+        width: 28em;
+        position: relative;
+        top: 50em;
+        left: -5em;
+        @media screen and (max-width: 1024px) {
+          width: 50%;
+          left: 2em;
+          margin: auto;
+        }
+      }
+      .phone {
+        width: 15em;
+        position: relative;
+        top: 50em;
+        left: 0em;
+
+        @media screen and (max-width: 1024px) {
+          width: 30%;
+          left: 2em;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+        margin: auto;
+      }
+
+      &-info {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 2em;
+        overflow: hidden;
+        @media screen and (max-width: 1024px) {
+          margin: 1em;
+        }
+
+        .border {
+          width: 0;
+          height: 0.5em;
+        }
+
+        .border-info {
+          position: relative;
+          top: -5em;
+          font-size: 2.5em;
+          text-transform: uppercase;
+          font-weight: bolder;
+
+          @media screen and (max-width: 1024px) {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.border {
+  height: 0.7em;
+  width: 100%;
+  background: $gradient;
+  margin-bottom: 2em;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 1em;
+  }
+}
+
+.dev {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-info {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      margin: auto;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    img {
+      margin: 1em;
+      @media screen and (max-width: 1024px) {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 1em;
+
+      @media screen and (max-width: 1024px) {
+        margin-left: 0;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        @media screen and (max-width: 1024px) {
+          width: 90%;
+        }
+
+        .line {
+          background: $gradient;
+          height: 0.3em;
+          width: 0;
+        }
+
+        p {
+          width: 70%;
+          position: relative;
+          top: -7em;
+          color: $dark;
+          font-weight: bold;
+
+          @media screen and (max-width: 1024px) {
+            width: 30%;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
 .technos {
+  margin-bottom: 5em;
+  width: 50%;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 2em;
+    width: 90%;
+  }
 
   &-list {
     width: 80%;
     margin: 2em 8em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-
-    .border {
-      height: 0.7em;
+    @media screen and (max-width: 1024px) {
+      margin: 1em auto;
+      flex-flow: row wrap;
       width: 100%;
-      background: $gradient;
-      margin-bottom: 2em;
     }
 
-    h3 {
-      font-size: 3em;
+    h4 {
+      font-size: 2.5em;
       text-transform: uppercase;
       font-weight: bolder;
+      @media screen and (max-width: 1024px) {
+        margin: 0;
+      }
     }
 
     .icons {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 10%;
       margin: 2em;
+      width: 40%;
+      @media screen and (max-width: 1024px) {
+        margin: 1em 0.5em;
+        width: 40%;
+      }
+
+      p {
+        @media screen and (max-width: 1024px) {
+          margin: 0.5em 0;
+        }
+      }
 
       :nth-child(1) {
         align-self: center;
