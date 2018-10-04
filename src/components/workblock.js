@@ -133,7 +133,7 @@ class Workblock extends React.Component {
                       </CSSTransition>
                     </div>
                     <div>
-                      <p className="info-title">Technos</p>
+                      <p className="info-title">Techno</p>
                       <CSSTransition
                         in={activeIndex == index}
                         timeout={1000}

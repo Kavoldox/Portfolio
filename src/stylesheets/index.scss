@@ -20,22 +20,26 @@ body {
   margin: 0;
 
   .index {
-    margin: 3em auto;
-    .title-h1, .title-span, .title-pro {
-      color: $purple;
-      font-size: 10em;
-      text-align: center;
-      font-family: 'Abril Fatface', cursive;
-      font-weight: lighter;
-      @media screen and (max-width: 1000px) {
-        font-size: 3em;
+    .title {
+      margin: 2em 4em;
+      &-h1, &-span, &-pro {
+        color: $purple;
+        font-size: 10em;
+        margin: 0;
+        font-family: 'Abril Fatface', cursive;
+        font-weight: lighter;
+        @media screen and (max-width: 1000px) {
+          font-size: 3em;
+        }
       }
-    }
-    .title-span {
-      display: block;
-    }
-    .title-pro {
-      display: none;
+      &-span {
+        display: block;
+        margin-bottom: 1em;
+      }
+      &-pro {
+        font-size: 5em;
+        width: 30%;
+      }
     }
   }
 

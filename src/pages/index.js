@@ -6,6 +6,8 @@ import Helmet from 'react-helmet'
 
 const pageTransitionEvent = 'gatsby-plugin-page-transition::exit';
 
+
+
 // const defaultStyle={
 //   transition: 'left 500ms cubic-bezier(0.47, 0, 0.75, 0.72)',
 //   left: '100%',
@@ -33,27 +35,29 @@ class MyPage extends React.Component {
     this.setState({
       in: true
     })
+    // anime({
+    //   targets: '.title-h1',
+    //   translateY: -150,
+    //   easing: 'easeOutExpo',
+    //   delay: 2000
+    // });
+    // anime({
+    //   targets: '.title-span',
+    //   translateY: 150,
+    //   easing: 'easeOutExpo',
+    //   delay: 2000
+    // });
+    // anime({
+    //   targets: '.title-pro',
+    //   opacity: 1,
+    //   easing: 'easeOutExpo',
+    //   delay: 2500
+    // });
     // const titleTimeLine = anime.timeline();
     //
     //
     // titleTimeLine
     // .add({
-    //   targets: '.title-h1',
-    //   translateY: -250,
-    //   easing: 'easeOutExpo',
-    //   opacity: 1,
-    //   delay: 3000
-    // })
-    // .add({
-    //   targets: '.title-span',
-    //   translateY: 250,
-    //   easing: 'easeOutExpo',
-    // })
-    // .add({
-    //   targets: '.title-pro',
-    //   width: '50%',
-    //   opacity: 1,
-    //   easing: 'easeOutExpo'
     // })
   }
 
@@ -81,13 +85,15 @@ class MyPage extends React.Component {
           <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
         </Helmet>
         <div className="index">
-          <h1 className="title-h1">
-            Timothé
-          </h1>
-          <span className="title-pro">
-            Web Developer Front-End
-          </span>
-          <span className="title-span">GOSSET</span>
+          <div className="title">
+            <h1 className="title-h1">
+              Timothé
+            </h1>
+            <span className="title-span">GOSSET</span>
+            <span className="title-pro">
+              Web Developer Front-End
+            </span>
+          </div>
         </div>
       </PageTransition>
     )

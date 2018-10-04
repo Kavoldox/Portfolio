@@ -4,7 +4,7 @@
   width: 100%;
   margin: auto;
   @media screen and (max-width: 1024px) {
-    width: 90%;
+    width: 100%;
   }
 
   h4 {
@@ -32,7 +32,7 @@
 .main {
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 80%;
   margin: 3em auto 0;
 
   @media screen and (max-width: 1024px) {
@@ -42,16 +42,20 @@
 
   &-right {
     margin: 0 auto;
+    @media screen and (max-width: 1024px) {
+      width: 80%;
+    }
 
     h1 {
       position: relative;
       top: -0.3em;
       right: 1em;
+      font-size: 7em;
     }
 
     p {
       position: relative;
-      top: -3.5em;
+      top: -2.5em;
       right: 2em;
       color: $grey;
       font-size: 2em;
@@ -59,7 +63,7 @@
       margin: 1em auto;
 
       @media screen and (max-width: 1024px) {
-        font-size: 1.5em;
+        font-size: 5em;
       }
 
       a {
@@ -81,13 +85,14 @@
       p {
         position: inherit;
         width: 100%;
+        font-size: 1em;
       }
     }
   }
 
   &-left {
     img {
-      width: 80em;
+      width: 60em;
       margin: auto;
       @media screen and (max-width: 1024px) {
         width: 100%;
@@ -105,22 +110,30 @@
 }
 
 .infos {
-  width: 70%;
+  width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media screen and (max-width: 1024px) {
     flex-direction: column-reverse;
-    margin: 2em auto;
+    margin: auto;
     width: 100%;
   }
 
   &-infos {
-    padding: 5em 15em;
+    padding: 5em;
+    width: 50%;
     @media screen and (max-width: 1024px) {
+      width: 70%;
       padding: 1em;
-      margin: 0 1em;
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: 1024px) {
+      p, li {
+        font-size: 1.8em;
+      }
     }
 
     ul {
@@ -131,6 +144,7 @@
     h4 {
       font-family: 'Abril Fatface', cursive;
       font-weight: lighter;
+      font-size: 3em;
       @media screen and (max-width: 1024px) {
         font-size: 1.8em;
       }
@@ -148,76 +162,61 @@
   }
 }
 
+.mac-pic {
+  width: 60%;
+  margin: 3em auto;
+  display: block;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+}
+
 .resp {
   margin-bottom: 10em;
   @media screen and (max-width: 1024px) {
-    margin-bottom: 5em;
+    margin: 0 auto 5em;
+    width: 100%;
   }
 
   &-pics {
-    width: 90%;
+    width: 80%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
     @media screen and (max-width: 1024px) {
       width: 100%;
       margin: auto;
     }
-
-    .info-pics {
-      overflow: hidden;
-      .mac {
-        width: 75em;
-        position: relative;
-        top: 50em;
-        left: 12em;
-        @media screen and (max-width: 1024px) {
-          width: 90%;
-          left: 1em;
-          margin: auto;
-        }
-      }
-      .tab {
-        width: 28em;
-        position: relative;
-        top: 50em;
-        left: -5em;
-        @media screen and (max-width: 1024px) {
-          width: 50%;
-          left: 2em;
-          margin: auto;
-        }
-      }
-      .phone {
-        width: 15em;
-        position: relative;
-        top: 50em;
-        left: 0em;
-
-        @media screen and (max-width: 1024px) {
-          width: 30%;
-          left: 2em;
-        }
-      }
-    }
-
     .info {
       display: flex;
-      justify-content: center;
-      width: 50%;
+      flex-direction: row;
+      width: 80%;
       margin: auto;
       @media screen and (max-width: 1024px) {
+        flex-direction: column;
         width: 100%;
-        margin: auto;
+        margin: 0.5em auto;
+      }
+
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+        @media screen and (max-width: 1024px) {
+          flex-direction: column;
+        }
       }
 
       &-info {
-        width: 30%;
         display: flex;
-        flex-direction: column;
+        margin: auto;
+        align-self: center;
         justify-content: center;
-        margin: 2em;
+        flex-direction: column;
         overflow: hidden;
         @media screen and (max-width: 1024px) {
-          margin: 1em;
+          margin: 1em auto;
+          padding-left: 1em;
+          align-self: flex-start;
+          width: 90%;
         }
 
         .border {
@@ -225,15 +224,52 @@
           height: 0.5em;
         }
 
-        .border-info {
+        .block {
           position: relative;
-          top: -5em;
-          font-size: 2.5em;
-          text-transform: uppercase;
-          font-weight: bolder;
+          top: -10em;
 
+          &-info {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            font-weight: bolder;
+
+            @media screen and (max-width: 1024px) {
+              font-size: 1em;
+            }
+          }
+        }
+
+      }
+      &-pics {
+        overflow: hidden;
+        width: 50%;
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+        }
+        .mac {
+          width: 100%;
+          position: relative;
+          top: -50em;
           @media screen and (max-width: 1024px) {
-            font-size: 1em;
+            width: 100%;
+            margin: auto;
+          }
+        }
+        .tab {
+          width: 100%;
+          position: relative;
+          top: -50em;
+          @media screen and (max-width: 1024px) {
+            width: 100%;
+            margin: auto;
+          }
+        }
+        .phone {
+          width: 100%;
+          position: relative;
+          top: -50em;
+          @media screen and (max-width: 1024px) {
+            width: 100%;
           }
         }
       }
@@ -252,32 +288,96 @@
 }
 
 .dev {
-  width: 70%;
+  width: 80%;
   margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   @media screen and (max-width: 1024px) {
-    width: 100%;
+    width: 90%;
     flex-direction: column;
     align-items: center;
+    margin: auto;
+  }
+
+  &-info-nophone {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    @media screen and (max-width: 1024px) {
+      width: 90%;
+      margin: auto;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-mac {
+      width: 100%;
+      height: 50%;
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+        height: 50%;
+        margin-bottom: 1em;
+      }
+    }
   }
 
   &-info {
     width: 50%;
-    height: 50%;
+    height: 60%;
     display: flex;
     @media screen and (max-width: 1024px) {
       width: 100%;
       margin: auto;
       align-items: center;
       justify-content: space-around;
+
+      .info-phone {
+        margin: 1em;
+
+        @media screen and (max-width: 1024px) {
+          width: 50%;
+        }
+      }
     }
 
-    img {
-      margin: 1em;
+    &-right-nophone {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 1em;
+
       @media screen and (max-width: 1024px) {
-        width: 50%;
-        height: 50%;
+        flex-direction: row;
+        margin-left: 0;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        @media screen and (max-width: 1024px) {
+          width: 25%;
+        }
+
+        .line {
+          background: $gradient;
+          height: 0.3em;
+          width: 0;
+        }
+
+        p {
+          width: 70%;
+          position: relative;
+          top: -7em;
+          color: $dark;
+          font-weight: bold;
+
+          @media screen and (max-width: 1024px) {
+            width: 100%;
+            font-size: 1em;
+          }
+        }
       }
     }
 
@@ -290,7 +390,6 @@
       @media screen and (max-width: 1024px) {
         margin-left: 0;
       }
-
       .info {
         display: flex;
         flex-direction: column;
@@ -325,15 +424,15 @@
 
 .technos {
   margin-bottom: 5em;
-  width: 50%;
+  width: 30%;
 
   @media screen and (max-width: 1024px) {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     width: 90%;
   }
 
   &-list {
-    width: 80%;
+    width: 100%;
     margin: 2em 8em;
     display: flex;
     flex-direction: column;
@@ -357,7 +456,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin: 2em;
+      margin: 1.5em 2em;
       width: 40%;
       @media screen and (max-width: 1024px) {
         margin: 1em 0.5em;
@@ -365,6 +464,7 @@
       }
 
       p {
+        margin: 0.3em 0;
         @media screen and (max-width: 1024px) {
           margin: 0.5em 0;
         }

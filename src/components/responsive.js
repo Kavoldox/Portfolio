@@ -8,7 +8,7 @@ class Responsive extends React.Component {
     ScrollReveal().reveal(
       '.resp',
       {
-        delay: 500 ,
+        delay: 500,
         afterReveal: function() {
           const titleTimeLine = anime.timeline();
 
@@ -23,25 +23,24 @@ class Responsive extends React.Component {
               targets: '.info-info .border',
               easing: 'easeOutExpo',
               opacity: 1,
-              width: '100%',
+              width: '15em',
               duration: 500
             })
             .add({
-              targets: '.info-info .border-info',
+              targets: '.block',
               easing: 'easeOutExpo',
               opacity: 1,
-              translateY: '5em',
+              translateY: '10em',
               duration: 500
             })
             .add({
               targets: ['.mac', '.tab', '.phone'],
               easing: 'easeOutExpo',
-              opacity: 1,
-              translateY: '-50em',
+              translateY: '50em',
               duration: 500,
               delay: function(target, index) {
             // 100ms delay multiplied by every div index, in ascending order
-            return index * 100;
+            return index * 300;
           },
             })
         }
@@ -62,31 +61,40 @@ class Responsive extends React.Component {
           <div className="info">
             <div className="info-info">
               <div className="border" />
-              <span className="border-info">Desktop</span>
+              <div className="block">
+                <span className="block-info">Desktop</span>
+              </div>
             </div>
-            <div className="info-info">
-              <div className="border" />
-              <span className="border-info">Desktop</span>
-            </div>
-            <div className="info-info">
-              <div className="border" />
-              <span className="border-info">Desktop</span>
+            <div className='info-pics'>
+              <img className="mac" src={require(`../utils/work/${mac}.jpg`)}/>
             </div>
           </div>
-          <div className='info-pics'>
-            <img className="mac" src={require(`../utils/work/${mac}.jpg`)}/>
-            <img className="tab" src={require(`../utils/work/${ipad}.jpg`)}/>
-            <img className="phone" src={require(`../utils/work/${phone}.jpg`)}/>
+          <div className="info info-reverse">
+            <div className="info-info">
+              <div className="border" />
+              <div className="block">
+                <span className="block-info">Tablette</span>
+              </div>
+            </div>
+            <div className='info-pics'>
+              <img className="tab" src={require(`../utils/work/${ipad}.jpg`)}/>
+            </div>
+          </div>
+          <div className="info">
+            <div className="info-info">
+              <div className="border" />
+              <div className="block">
+                <span className="block-info">Tablette</span>
+              </div>
+            </div>
+            <div className='info-pics'>
+              <img className="phone" src={require(`../utils/work/${phone}.jpg`)}/>
+            </div>
           </div>
         </div>
       </div>
     )
   }
 }
-//
-// const Responsive = ({ mac, tab, phone }) => {
-//   return (
-//   )
-// }
 
 export default Responsive

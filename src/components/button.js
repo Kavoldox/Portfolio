@@ -33,7 +33,7 @@ class Button extends React.Component {
   render() {
     const buttonClass = `button button-${this.props.path}`
     return (
-      <div className="miniworks">
+      <div className="button-link">
         {this.props.path ?
           <Link
             to={{

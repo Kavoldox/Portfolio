@@ -2,11 +2,13 @@ import React from 'react';
 import ScrollReveal from 'scrollreveal'
 import anime from 'animejs';
 
+
 class Infos extends React.Component {
 
   componentDidMount() {
+    const currentClassName = this.props.phone2 ? 'dev-info' : 'dev-info-nophone';
     ScrollReveal().reveal(
-      '.dev',
+      `.${currentClassName}`,
       {
         delay: 500 ,
         afterReveal: function() {
@@ -14,11 +16,11 @@ class Infos extends React.Component {
 
             infosTimeLine
             .add({
-              targets: '.info-phone',
+              targets: '.info-img',
               scale: 1.2,
             })
             .add({
-              targets: '.info-phone',
+              targets: '.info-img',
               easing: 'easeOutExpo',
               scale: 1,
             })
@@ -40,7 +42,9 @@ class Infos extends React.Component {
   }
 
   render() {
-    const {mac, ipad, phone, technos, informations } = this.props;
+    const {mac, phone2, technos, informations } = this.props;
+    const currentClassName = phone2 ? 'dev-info' : 'dev-info-nophone'
+    const currentClassName2 = phone2 ? 'dev-info-right' : 'dev-info-right-nophone'
     return (
       <div>
         <h2>Technos</h2>
@@ -56,9 +60,13 @@ class Infos extends React.Component {
               ))}
             </div>
           </div>
-          <div className="dev-info">
-            <img className="info-phone" src={require(`../utils/work/${phone}.jpg`)}/>
-            <div className="dev-info-right">
+          <div className={currentClassName}>
+            {phone2 ?
+              <img className="info-img info-phone" src={require(`../utils/work/${phone2}`)}/>
+            :
+              <img className="info-img info-mac" src={require(`../utils/work/${mac}.jpg`)}/>
+            }
+            <div className={currentClassName2}>
               {informations.map(info => (
                 <div className="info">
                   <div className="line"/>

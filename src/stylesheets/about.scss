@@ -65,8 +65,43 @@
     font-size: 3em;
     margin: 2em;
 
+    span {
+      font-family: 'Abril Fatface', cursive;
+      font-weight: lighter;
+    }
+
+    p {
+      width: 50%;
+      margin: 1em auto;
+    }
+    @media screen and (max-width: 1024px) {
+      margin: 0.5em;
+
+      p {
+        font-size: 0.5em;
+      }
+
+      h3 {
+        width: 60%;
+        margin: 1em auto;
+      }
+
+      span {
+
+      }
+    }
+
     &-icons > * {
       margin: 0.5em;
+    }
+
+    @media screen and (max-width: 1024px) {
+      &-icons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+      }
     }
   }
 

@@ -4,6 +4,7 @@ import PageTransition from 'gatsby-plugin-page-transitions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Skills from "../components/skills.js"
+import ScrollInfo from "../components/scrollInfo.js"
 import "../stylesheets/about.scss"
 
 const skills = [
@@ -16,7 +17,7 @@ const skills = [
   {
     'type': 'Front-End',
     'resume': 'Intégration de maquettes, création d\'expériences utilisateur, intéraction poussée.',
-    'tags': ['JS', 'CSS', 'JavaScript', 'Responsive'],
+    'tags': ['HTML', 'CSS', 'JavaScript', 'Responsive'],
     'logs': ['Jquery', 'React', 'Sass', 'Stylus', 'Bootstrap'],
   },
   {
@@ -40,6 +41,22 @@ class About extends React.Component {
     activeIndex: 0,
     translateValue: 0
   }
+
+  // componentDidMount() {
+  //   const titleTimeLine = anime.timeline();
+  //
+  //     titleTimeLine
+  //     .add({
+  //       targets: '.about-pres-icon',
+  //       rotate: 20,
+  //       duration: 400,
+  //     })
+  //     .add({
+  //       targets: '.about-pres-icon',
+  //       rotate: -40,
+  //       duration: 400,
+  //     })
+  // }
 
   goToSlide = (evt) => {
     const { id } = evt.target;
@@ -125,26 +142,33 @@ class About extends React.Component {
   }
 
   render () {
-    const purple = '#3d3560';
+    const purple = '#3d2b3b';
     const purple2 = '#8a118e';
     return (
       <PageTransition transitionTime={500}>
         <div className="about">
           <div className="about-pres">
-            <h3>Je suis Tim</h3>
-            <p>Lorem ipsum</p>
+            <h3>Timothé GOSSET</h3>
+            <span>HEY !</span>
+            {/* <FontAwesomeIcon
+              icon='hand-paper'
+              transform="grow-1"
+              className='about-pres-icon'
+            /> */}
+            <p>J'habite en Normandie et je suis développeur web. Ayant un baguage marketing et graphique, et passionné par le design et l'intéraction,
+              j'axe mon travail en développement web côté front. </p>
             <div className="about-pres-icons">
-              <a href="#">
+              <a href="https://github.com/Kavoldox" target="_blank">
                 <FontAwesomeIcon
                   icon={['fab', 'github']}
-                  transform="grow-8"
+                  transform="grow-5"
                   color={purple}
                 />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/timoth%C3%A9-gosset-%F0%9F%91%8B-39122a151/" target="_blank">
                 <FontAwesomeIcon
                   icon={['fab', 'linkedin']}
-                  transform="grow-8"
+                  transform="grow-5"
                   color={purple}
                 />
               </a>
@@ -153,6 +177,7 @@ class About extends React.Component {
           <div className="about-titles">
             <div className="about-titles-block"
             >
+              {/* <ScrollInfo /> */}
               {skills.map((skill, index) => (
                 <div
                   id={skill.type}

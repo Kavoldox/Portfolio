@@ -47,7 +47,7 @@ class Oblog extends React.Component {
                     </div>
                     <div className="main-right">
                       <h1>{data.title}</h1>
-                      <p className="type">{data.resume}</p>
+                      <p className="type">{data.excerpt}</p>
                       <p className="link">Check the code on
                         <a href=''>
                           <FontAwesomeIcon
@@ -62,8 +62,7 @@ class Oblog extends React.Component {
                   <div className="infos">
                     <div className="infos-infos">
                       <h4>Projet</h4>
-                      <p>Blog sur la vie étudiante d'apprentis développeurs web.
-                        Développé en PHP, requêtage en SQL.</p>
+                      <p>{data.resume}</p>
                         <h4>Type</h4>
                         <p>{data.type}</p>
                         <h4>Fonctionnalités</h4>
@@ -72,12 +71,19 @@ class Oblog extends React.Component {
                             <li>{funct}</li>
                           ))}
                         </ul>
+                        <h4>Role</h4>
+                        <ul>
+                          {data.role.map(role => (
+                            <li>{role}</li>
+                          ))}
+                        </ul>
                       </div>
                       <div className="infos-img">
                         <img src={require(`../../utils/work/${data.home}.jpg`)}/>
                       </div>
                     </div>
-                    <Responsive {...data}/>
+                    <img className="mac-pic" src={require(`../../utils/work/${data.mac2}.jpg`)}/>
+                    {/* <Responsive {...data}/> */}
                     <Infos {...data}/>
                   </div>
                 )}

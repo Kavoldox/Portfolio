@@ -54,8 +54,8 @@ class Contact extends React.Component {
           <input type='text' className="field" onChange={this.onChange} value={this.state[name]} name="lastname" placeholder="Votre nom" />
           <input type='text' className="field" onChange={this.onChange} value={this.state[name]} name="firstname" placeholder="Votre prénom" />
           <input type='text' className="field" onChange={this.onChange} value={this.state[name]} name="email" placeholder="Votre adresse e-mail" />
-          <input type='textarea' className="field textarea" onChange={this.onChange} value={this.state[name]} name="message" placeholder="Votre message" />
-            <Button type='submit' name="Envoyer" onSubmit={this.handleSubmit}/>
+          <textarea type='textarea' className="field textarea" onChange={this.onChange} value={this.state[name]} name="message" placeholder="Votre message" />
+          <Button type='submit' name="Envoyer" onSubmit={this.handleSubmit}/>
         </form>
       </div>
     )
