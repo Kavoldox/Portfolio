@@ -12,7 +12,12 @@ function encode(data) {
 }
 
 class Contact extends React.Component {
-  state = {}
+  state = {
+    lastname: '',
+    firstname: '',
+    email: '',
+    message: '',
+  }
 
   onChange = (e) => {
     e.preventDefault();
@@ -26,16 +31,16 @@ class Contact extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state
-      })
-    })
-      // .then((resp) => (console.log(resp))
-      .catch(error => alert(error));
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({
+    //     "form-name": form.getAttribute("name"),
+    //     ...this.state
+    //   })
+    // })
+    //   // .then((resp) => (console.log(resp))
+    //   .catch(error => alert(error));
   };
 
 
@@ -45,16 +50,16 @@ class Contact extends React.Component {
         <form
           className="contact-form"
           onSubmit={this.handleSubmit}
-          action="mailto:timothgosset@gmail.com"
+          // action="mailto:timothgosset@gmail.com"
           name="contact"
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           >
-          <input type='text' className="field" onChange={this.onChange} value={this.state[name]} name="lastname" placeholder="Votre nom" />
-          <input type='text' className="field" onChange={this.onChange} value={this.state[name]} name="firstname" placeholder="Votre prénom" />
-          <input type='text' className="field" onChange={this.onChange} value={this.state[name]} name="email" placeholder="Votre adresse e-mail" />
-          <textarea type='textarea' className="field textarea" onChange={this.onChange} value={this.state[name]} name="message" placeholder="Votre message" />
+          <input type='text' className="field" onChange={this.onChange} value={this.state.lastname} name="lastname" placeholder="Votre nom" />
+          <input type='text' className="field" onChange={this.onChange} value={this.state.firstname} name="firstname" placeholder="Votre prénom" />
+          <input type='text' className="field" onChange={this.onChange} value={this.state.email} name="email" placeholder="Votre adresse e-mail" />
+          <textarea type='textarea' className="field textarea" onChange={this.onChange} value={this.state.message} name="message" placeholder="Votre message" />
           <Button type='submit' name="Envoyer" onSubmit={this.handleSubmit}/>
         </form>
       </div>

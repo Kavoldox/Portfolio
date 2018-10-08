@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollReveal from 'scrollreveal'
+// import ScrollReveal from 'scrollreveal'
 import anime from 'animejs';
 
 
@@ -7,40 +7,40 @@ class Infos extends React.Component {
 
   componentDidMount() {
     const currentClassName = this.props.phone2 ? 'dev-info' : 'dev-info-nophone';
-    if (typeof document !== 'undefined') {
-      ScrollReveal().reveal(
-        `.${currentClassName}`,
-        {
-          delay: 500 ,
-          afterReveal: function() {
-            const infosTimeLine = anime.timeline();
-
-            infosTimeLine
-            .add({
-              targets: '.info-img',
-              scale: 1.2,
-            })
-            .add({
-              targets: '.info-img',
-              easing: 'easeOutExpo',
-              scale: 1,
-            })
-            .add({
-              targets: '.info .line',
-              easing: 'easeOutExpo',
-              width: '100%',
-            })
-            .add({
-              targets: '.info p',
-              translateY: '7em',
-              delay: function(target, index) {
-                // 100ms delay multiplied by every div index, in ascending order
-                return index * 200;
-              },
-            })
-          }
-        });
-    }
+    // if (typeof window !== 'undefined') {
+    //   ScrollReveal().reveal(
+    //     `.${currentClassName}`,
+    //     {
+    //       delay: 500 ,
+    //       afterReveal: function() {
+    //         const infosTimeLine = anime.timeline();
+    //
+    //         infosTimeLine
+    //         .add({
+    //           targets: '.info-img',
+    //           scale: 1.2,
+    //         })
+    //         .add({
+    //           targets: '.info-img',
+    //           easing: 'easeOutExpo',
+    //           scale: 1,
+    //         })
+    //         .add({
+    //           targets: '.info .line',
+    //           easing: 'easeOutExpo',
+    //           width: '100%',
+    //         })
+    //         .add({
+    //           targets: '.info p',
+    //           translateY: '7em',
+    //           delay: function(target, index) {
+    //             // 100ms delay multiplied by every div index, in ascending order
+    //             return index * 200;
+    //           },
+    //         })
+    //       }
+    //     });
+    // }
   }
 
   render() {

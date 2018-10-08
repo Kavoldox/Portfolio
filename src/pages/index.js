@@ -87,15 +87,6 @@ class MyPage extends React.Component {
       <PageTransition
     transitionTime={500}
         >
-        <Helmet
-            bodyAttributes={{
-                class: 'newClassToBody'
-            }}
-        >
-          <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-          <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js">
-          </script>
-        </Helmet>
         <div className="index">
           <div className="title">
             <h1 className="title-h1">

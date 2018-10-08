@@ -1,7 +1,7 @@
 import React from "react"
 import PageTransition from 'gatsby-plugin-page-transitions'
 import carouselData from '../../utils/data.js';
-import ScrollReveal from 'scrollreveal';
+// import ScrollReveal from 'scrollreveal';
 import anime from 'animejs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -22,15 +22,15 @@ class Derive extends React.Component {
       on: true,
     }
 
-    componentDidMount() {
-      if (typeof document !== 'undefined') {
-      ScrollReveal().reveal('.technos', {delay:500});
-      ScrollReveal().reveal('.icons', {
-        interval: 200,
-        delay: 500
-      });
-    }
-    }
+    // componentDidMount() {
+    //   if (typeof window !== 'undefined') {
+    //   ScrollReveal().reveal('.technos', {delay:500});
+    //   ScrollReveal().reveal('.icons', {
+    //     interval: 200,
+    //     delay: 500
+    //   });
+    // }
+    // }
 
     render() {
       const datas = carouselData.filter(datas => datas.title === `A la dérive`)

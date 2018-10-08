@@ -12,12 +12,11 @@ import "../stylesheets/workblock.scss"
 class Workblock extends React.Component {
 
   state = {
-    on: false,
-    width: window.innerWidth,
+    width: 0,
   }
 
 
-  componentWillMount() {
+  componentDidMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
   componentWillUnmount() {
