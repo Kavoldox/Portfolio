@@ -61,3 +61,4 @@ typings/
 public
 yarn-error.log
 src/utils/work/
+src/utils/data.js

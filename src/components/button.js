@@ -10,7 +10,7 @@ class Button extends React.Component {
 
   animate = (name, back, color, border) => {
 
-  const el = document.querySelector(`.miniworks .button-${name}`);
+  const el = document.querySelector(`.button-${name}`);
 
   anime({
     targets: el,
