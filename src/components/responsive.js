@@ -5,6 +5,7 @@ import anime from 'animejs';
 class Responsive extends React.Component {
 
   componentDidMount() {
+    if (typeof window !== 'undefined') {
     ScrollReveal().reveal(
       '.resp',
       {
@@ -12,39 +13,40 @@ class Responsive extends React.Component {
         afterReveal: function() {
           const titleTimeLine = anime.timeline();
 
-            titleTimeLine
-            .add({
-              targets: '.info',
-              easing: 'easeOutExpo',
-              opacity: 1,
-              duration: 800
-            })
-            .add({
-              targets: '.info-info .border',
-              easing: 'easeOutExpo',
-              opacity: 1,
-              width: '15em',
-              duration: 500
-            })
-            .add({
-              targets: '.block',
-              easing: 'easeOutExpo',
-              opacity: 1,
-              translateY: '10em',
-              duration: 500
-            })
-            .add({
-              targets: ['.mac', '.tab', '.phone'],
-              easing: 'easeOutExpo',
-              translateY: '50em',
-              duration: 500,
-              delay: function(target, index) {
-            // 100ms delay multiplied by every div index, in ascending order
-            return index * 300;
-          },
-            })
+          titleTimeLine
+          .add({
+            targets: '.info',
+            easing: 'easeOutExpo',
+            opacity: 1,
+            duration: 800
+          })
+          .add({
+            targets: '.info-info .border',
+            easing: 'easeOutExpo',
+            opacity: 1,
+            width: '15em',
+            duration: 500
+          })
+          .add({
+            targets: '.block',
+            easing: 'easeOutExpo',
+            opacity: 1,
+            translateY: '10em',
+            duration: 500
+          })
+          .add({
+            targets: ['.mac', '.tab', '.phone'],
+            easing: 'easeOutExpo',
+            translateY: '50em',
+            duration: 500,
+            delay: function(target, index) {
+              // 100ms delay multiplied by every div index, in ascending order
+              return index * 300;
+            },
+          })
         }
       });
+    }
   }
 
   componentDidUpdate() {

@@ -23,11 +23,13 @@ class Omeal extends React.Component {
   }
 
   componentDidMount() {
+    if (typeof window !== 'undefined') {
     ScrollReveal().reveal('.technos', {delay:500});
     ScrollReveal().reveal('.icons', {
       interval: 200,
       delay: 500
     });
+    }
 
   }
 

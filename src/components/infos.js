@@ -7,12 +7,13 @@ class Infos extends React.Component {
 
   componentDidMount() {
     const currentClassName = this.props.phone2 ? 'dev-info' : 'dev-info-nophone';
-    ScrollReveal().reveal(
-      `.${currentClassName}`,
-      {
-        delay: 500 ,
-        afterReveal: function() {
-          const infosTimeLine = anime.timeline();
+    if (typeof window !== 'undefined') {
+      ScrollReveal().reveal(
+        `.${currentClassName}`,
+        {
+          delay: 500 ,
+          afterReveal: function() {
+            const infosTimeLine = anime.timeline();
 
             infosTimeLine
             .add({
@@ -37,8 +38,9 @@ class Infos extends React.Component {
                 return index * 200;
               },
             })
-        }
-      });
+          }
+        });
+    }
   }
 
   render() {
