@@ -7,7 +7,8 @@ class Responsive extends React.Component {
   componentDidMount() {
     const isBrowser = typeof window !== 'undefined';
     isBrowser ? require('scrollreveal') : undefined;
-    ScrollReveal().reveal(
+    window.sr = new ScrollReveal();
+    sr.reveal(
       '.resp',
       {
         delay: 500,
