@@ -12,7 +12,7 @@ import "../stylesheets/workblock.scss"
 class Workblock extends React.Component {
 
   state = {
-    width: 0,
+    width: window.innerWidth,
   }
 
 
