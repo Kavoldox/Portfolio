@@ -1,5 +1,6 @@
 import React from 'react';
 import ScrollReveal from 'scrollreveal'
+window.sr = ScrollReveal();
 import anime from 'animejs';
 
 
