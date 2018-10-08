@@ -2,7 +2,6 @@ import React from "react"
 import PageTransition from 'gatsby-plugin-page-transitions'
 import carouselData from '../../utils/data.js';
 import ScrollReveal from 'scrollreveal';
-window.sr = ScrollReveal();
 import anime from 'animejs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -16,7 +15,6 @@ const slideUp = {
     origin: 'bottom',
     opacity: null
 };
-
 
 class Derive extends React.Component {
 

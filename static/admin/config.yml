@@ -5,6 +5,8 @@ backend:
 media_folder: static/assets
 public_folder: assets
 
+sass: "node_modules/scrollreveal/src"
+
 collections:
   - name: blog
     label: Blog
