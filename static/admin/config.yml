@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Kavoldox/Portfolio
+  repo: Kavoldox/portfolio
 
 media_folder: static/assets
 public_folder: assets
