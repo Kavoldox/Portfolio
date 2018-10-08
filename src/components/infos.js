@@ -7,7 +7,7 @@ class Infos extends React.Component {
 
   componentDidMount() {
     const currentClassName = this.props.phone2 ? 'dev-info' : 'dev-info-nophone';
-    if (typeof window !== 'undefined') {
+    if (typeof document !== 'undefined') {
       ScrollReveal().reveal(
         `.${currentClassName}`,
         {

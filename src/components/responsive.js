@@ -5,7 +5,7 @@ import anime from 'animejs';
 class Responsive extends React.Component {
 
   componentDidMount() {
-    if (typeof window !== 'undefined') {
+    if (typeof document !== 'undefined') {
     ScrollReveal().reveal(
       '.resp',
       {
