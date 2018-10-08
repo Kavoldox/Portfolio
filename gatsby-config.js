@@ -7,6 +7,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-page-transitions',
-    'gatsby-plugin-netlify-cms',
+    `gatsby-plugin-netlify-cms`,
   ],
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import PageTransition from 'gatsby-plugin-page-transitions'
 import carouselData from '../../utils/data.js';
-import ScrollReveal from 'scrollreveal'
+import ScrollReveal from 'scrollreveal';
 import anime from 'animejs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
