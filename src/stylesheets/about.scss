@@ -5,11 +5,6 @@
 .about {
   overflow: hidden;
 
-  h3 {
-    font-size: 3em;
-    margin: 0.5em auto;
-  }
-
   h4 {
     font-size: 3em;
     font-family: 'Abril Fatface', cursive;
@@ -69,6 +64,9 @@
     color: $purple;
     font-size: 3em;
     margin: 2em;
+    @media screen and (max-width: 768px) {
+      margin: 1em;
+    }
 
     span {
       font-family: 'Abril Fatface', cursive;
@@ -84,15 +82,13 @@
 
       p {
         font-size: 0.5em;
+        width: 90%;
       }
 
       h3 {
-        width: 60%;
-        margin: 1em auto;
-      }
-
-      span {
-
+        margin: 0.5em auto;
+        width: 100%;
+        font-size: 2em;
       }
     }
 
@@ -114,10 +110,15 @@
     display: flex;
     position: relative;
     left: 38%;
-    @media screen and (max-width: 1024px) {
+    margin-bottom: 5em;
+    @media screen and (max-width: 768px) {
       left: 0;
       justify-content: flex-start;
     }
+    // @media screen and (min-width: 768px) and (max-width: 1024px) {
+    //   left: 25vw;
+    //   justify-content: flex-start;
+    // }
     .off {
       opacity: 0.3;
       @media screen and (max-width: 1024px) {
@@ -134,8 +135,9 @@
       display: flex;
       flex-direction: column;
       @media screen and (max-width: 1024px) {
-        width: 98vw;
+        width: 95vw;
         padding: 1em 1em 0;
+        margin: auto;
       }
 
 

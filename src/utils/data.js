@@ -37,7 +37,7 @@ const carouselData = [
     type: 'Blog',
     techno: ['PHP'],
     technos: [
-      {'type':'CSS', 'techno': 'SASS'},
+      {'type':'CSS', 'techno': 'Bootstrap'},
       {'type':'BACK', 'techno': 'PHP'},
       {'type':'BDD', 'techno': 'MySQL'},
     ],
@@ -47,8 +47,8 @@ const carouselData = [
     ],
     informations: [
       {'info': 'Requête SQL, PDO'},
-      {'info': 'Burger Menu'},
       {'info': 'Recherche de posts'},
+      {'info': 'Tri des posts'},
     ],
     role: ['Intégration','Développement'],
     home: 'derive/derive-home',

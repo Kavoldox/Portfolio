@@ -23,23 +23,41 @@ body {
     overflow: hidden;
     .title {
       margin: 2em 4em;
+      @media screen and (max-width: 1024px) {
+        margin: 2em;
+      }
       &-h1, &-span, &-pro {
         color: $purple;
         font-size: 10em;
         margin: 0;
         font-family: 'Abril Fatface', cursive;
         font-weight: lighter;
-        @media screen and (max-width: 1000px) {
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          font-size: 7em;
+        }
+        @media screen and (max-width: 768px) {
           font-size: 3em;
         }
       }
       &-span {
         display: block;
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          margin-bottom: 0.5em;
+        }
+        @media screen and (max-width: 768px) {
+          margin-bottom: 0.5em;
+        }
       }
       &-pro {
         font-size: 5em;
         width: 30%;
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          font-size: 3em;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 2em;
+        }
       }
     }
   }
@@ -55,8 +73,16 @@ body {
   }
 
   footer {
+    position: absolute;
+    bottom: 0;
+    height: 3em;
+    width: 100%;
     text-align: center;
-    margin: 2em auto;
+  }
+
+  .body {
+    min-height: 100vh;
+    position: relative;
   }
 }
 

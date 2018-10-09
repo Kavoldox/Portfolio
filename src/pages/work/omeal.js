@@ -22,16 +22,6 @@ class Omeal extends React.Component {
     on: true,
   }
 
-  componentDidMount() {
-    const isBrowser = typeof document !== 'undefined';
-    const ScrollReveal = isBrowser ? require('scrollreveal') : undefined;
-    ScrollReveal().reveal('.technos', {delay:500});
-    ScrollReveal().reveal('.icons', {
-      interval: 200,
-      delay: 500
-    });
-  }
-
   render() {
     const datas = carouselData.filter(datas => datas.title === `MealOclock`)
     const works = carouselData.filter(works => works.title !== `MealOclock`)
@@ -40,8 +30,8 @@ class Omeal extends React.Component {
     transitionTime={500}
         >
           <div className="index">
-              {datas.map(data =>
-                <div>
+              {datas.map((data, index) =>
+                <div key={index}>
                   <div className="main">
                     <div className="main-left">
                       <img src={require(`../../utils/work/${data.image}.jpg`)}/>
@@ -68,14 +58,14 @@ class Omeal extends React.Component {
                         <p>{data.type}</p>
                         <h4>Fonctionnalités</h4>
                         <ul>
-                          { data.fonctionnalités.map(funct => (
-                            <li>{funct}</li>
+                          { data.fonctionnalités.map((funct, index) => (
+                            <li key={index}>{funct}</li>
                           ))}
                         </ul>
                         <h4>Role</h4>
                         <ul>
-                          {data.role.map(role => (
-                            <li>{role}</li>
+                          {data.role.map((role, index) => (
+                            <li key={index}>{role}</li>
                           ))}
                         </ul>
                       </div>

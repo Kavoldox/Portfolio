@@ -36,19 +36,23 @@
     }
 
     .burger {
-      padding: 1.5em;
+      padding: 1em;
+      margin: 0.5em;
       color: $purple;
       z-index: 100;
       position: fixed;
       top: 0;
       right: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      // box-shadow: 0em 0.3em 0.5em rgba(0, 0, 0, 0.1);
 
       @media screen and (min-width: 768px) {
-        font-size: 2em;
+        font-size: 1.5em;
         padding: 1.2em;
       }
 
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 1025px) {
         display: none;
       }
 

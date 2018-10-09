@@ -49,10 +49,6 @@ class Responsive extends React.Component {
       });
   }
 
-  componentDidUpdate() {
-
-  }
-
 
   render() {
     const {mac, ipad, phone } = this.props;
@@ -86,7 +82,7 @@ class Responsive extends React.Component {
             <div className="info-info">
               <div className="border" />
               <div className="block">
-                <span className="block-info">Tablette</span>
+                <span className="block-info">Mobile</span>
               </div>
             </div>
             <div className='info-pics'>

@@ -9,38 +9,43 @@ class Infos extends React.Component {
     const currentClassName = this.props.phone2 ? 'dev-info' : 'dev-info-nophone';
     const isBrowser = typeof document !== 'undefined';
     const ScrollReveal = isBrowser ? require('scrollreveal') : undefined;
-      ScrollReveal().reveal(
-        `.${currentClassName}`,
-        {
-          delay: 500 ,
-          afterReveal: function() {
-            const infosTimeLine = anime.timeline();
+    ScrollReveal().reveal('.dev', { delay:500 });
+    ScrollReveal().reveal('.icons', {
+      interval: 200,
+      delay: 1200,
+    });
+    ScrollReveal().reveal(
+      `.${currentClassName}`,
+      {
+        delay: 1500 ,
+        afterReveal: function() {
+          const infosTimeLine = anime.timeline();
 
-            infosTimeLine
-            .add({
-              targets: '.info-img',
-              scale: 1.2,
-            })
-            .add({
-              targets: '.info-img',
-              easing: 'easeOutExpo',
-              scale: 1,
-            })
-            .add({
-              targets: '.info .line',
-              easing: 'easeOutExpo',
-              width: '100%',
-            })
-            .add({
-              targets: '.info p',
-              translateY: '7em',
-              delay: function(target, index) {
-                // 100ms delay multiplied by every div index, in ascending order
-                return index * 200;
-              },
-            })
-          }
-        });
+          infosTimeLine
+          .add({
+            targets: '.info-img',
+            scale: 1.2,
+          })
+          .add({
+            targets: '.info-img',
+            easing: 'easeOutExpo',
+            scale: 1,
+          })
+          .add({
+            targets: '.info .line',
+            easing: 'easeOutExpo',
+            width: '100%',
+          })
+          .add({
+            targets: '.info p',
+            translateY: '7em',
+            delay: function(target, index) {
+              // 100ms delay multiplied by every div index, in ascending order
+              return index * 200;
+            },
+          })
+        }
+      });
     }
 
   render() {
@@ -53,8 +58,8 @@ class Infos extends React.Component {
         <div className="dev">
           <div className="technos">
             <div className="technos-list">
-              { technos.map(techno => (
-                <div className='icons'>
+              { technos.map((techno, index) => (
+                <div key={index} className='icons'>
                   <div className="border" />
                   <h4>{techno.type}</h4>
                   <p>{techno.techno}</p>
@@ -69,8 +74,8 @@ class Infos extends React.Component {
               <img className="info-img info-mac" src={require(`../utils/work/${mac}.jpg`)}/>
             }
             <div className={currentClassName2}>
-              {informations.map(info => (
-                <div className="info">
+              {informations.map((info, index) => (
+                <div key={index} className="info">
                   <div className="line"/>
                   <p>{info.info}</p>
                 </div>

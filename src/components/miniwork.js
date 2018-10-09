@@ -13,7 +13,7 @@ class MiniWork extends React.Component {
         <div className="otherworks">
           <div className="miniworks">
             {this.props.works.map((work, index) => (
-              <div className="miniwork">
+              <div key={index}className="miniwork">
                 <h4>{work.title}</h4>
                 <img src={require(`../utils/work/${work.home}.jpg`)}/>
                 <Button path={work.path} name="Voir"/>
