@@ -11,9 +11,7 @@ import "../stylesheets/workblock.scss"
 
 class Workblock extends React.Component {
 
-  state = {
-    width: window.innerWidth,
-  }
+  state = {}
 
 
   componentDidMount() {
