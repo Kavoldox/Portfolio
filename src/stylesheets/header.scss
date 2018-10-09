@@ -9,12 +9,14 @@
   flex-direction: column;
   justify-content: space-around;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 
-  @media screen and (min-width: 1024px) {
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-  }
+  // @media screen and (min-width: 1024px) {
+  //   display: flex;
+  //   flex-direction: row;
+  //   box-sizing: border-box;
+  // }
 
   &-nav {
     width: 100%;
@@ -28,7 +30,10 @@
     }
 
     h3 {
-      color: $purple;
+      color: white;
+      font-size: 1.5em;
+      margin: 0.5em;
+      letter-spacing: 0.5em;
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         font-size: 2em;
         padding: 0.2em 0.8em;
@@ -38,80 +43,77 @@
     .burger {
       padding: 1em;
       margin: 0.5em;
-      color: $purple;
+      color: $sec;
       z-index: 100;
       position: fixed;
       top: 0;
       right: 0;
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 1);
       border-radius: 50%;
       // box-shadow: 0em 0.3em 0.5em rgba(0, 0, 0, 0.1);
 
       @media screen and (min-width: 768px) {
         font-size: 1.5em;
-        padding: 1.2em;
+        padding: 0.8em;
       }
 
-      @media screen and (min-width: 1025px) {
-        display: none;
-      }
+      // @media screen and (min-width: 1025px) {
+      //   display: none;
+      // }
 
       &-open {
         color: white;
+        box-shadow: none;
+        background-color: $dark;
       }
     }
   }
 
   .links {
-    @media screen and (max-width: 1024px) {
-      position: fixed;
-      z-index: 99;
-      top: -31em;
-      left: 0;
-      height: 30em;
-      width: 100%;
-      transition: transform 1s;
-      background: $purple;
+    position: fixed;
+    z-index: 99;
+    top: -60em;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: transform 1s;
+    background: $dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+
+    .listlink {
+      margin-top: 10em;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
       align-items: center;
-      color: white;
 
-      .listlink {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 60%;
-
-        li a {
-          color: white;
-          font-weight: lighter;
-          font-size: 1.2em;
-          @media screen and (min-width: 768px) {
-            font-size: 2em;
-            padding: 1em;
-          }
+      li a {
+        color: white;
+        font-weight: bold;
+        font-size: 1.2em;
+        @media screen and (min-width: 768px) {
+          font-size: 2em;
+          padding: 0.4em;
         }
       }
     }
 
     .follow {
-      display: none;
-
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1em;
+      text-transform: uppercase;
+      margin-bottom: 2em;
       @media screen and (min-width: 768px) {
         p {
           font-size: 2em;
+          margin: 1em 0 0.5em;
         }
-      }
-
-      @media screen and (max-width: 1024px) {
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 1em;
-        text-transform: uppercase;
       }
 
       .social {
@@ -119,10 +121,6 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          @media screen and (min-width: 768px) {
-            font-size: 1.5em;
-            padding: 1em;
-          }
         }
 
         a {
@@ -132,13 +130,11 @@
     }
 
     &-open {
-      @media screen and (max-width: 1024px) {
-        position: fixed;
-        top: 1;
-        height: 100%;
-        width: 100%;
-        transform: translateY(31em);
-      }
+      position: fixed;
+      top: 1;
+      height: 100%;
+      width: 100%;
+      transform: translateY(60em);
     }
   }
 
@@ -147,7 +143,6 @@
     text-decoration: none;
 
     h3 {
-      font-weight: normal;
       text-transform: uppercase;
     }
 
@@ -165,7 +160,7 @@
     width: 0%;
     height: 0.1em;
     content: '';
-    background: $purple;
+    background: white;
     transition: all 0.3s;
   }
 
@@ -195,10 +190,11 @@
 
     li {
       list-style: none;
-      margin: 0 1em;
+      margin: 0.5em;
       text-transform: uppercase;
       font-size: 1.5em;
-      font-weight: lighter;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
 
       @media screen and (max-width: 1024px) {
         margin: 0.5em auto;
@@ -208,7 +204,7 @@
         text-decoration: none;
         position: relative;
         padding: 0.4em 0;
-        color: $purple;
+        color:white;
       }
     }
   }

@@ -25,13 +25,13 @@ class Nav extends React.Component {
     this.state.open ? this.animate : null;
   }
 
-  animate = () => {
-    anime({
-      targets: '.links-open',
-      translateY: '30em',
-      direction: 'alternate',
-    });
-  }
+  // animate = () => {
+  //   anime({
+  //     targets: '.links-open',
+  //     translateY: '60em',
+  //     direction: 'alternate',
+  //   });
+  // }
   render() {
     const { open } = this.state;
     const currentClassNames = classNames('links', {

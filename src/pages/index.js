@@ -1,8 +1,8 @@
 import React from "react"
 import anime from 'animejs'
+import Helmet from 'react-helmet'
 import PageTransition from 'gatsby-plugin-page-transitions'
 import Transition from 'react-transition-group/Transition'
-import Helmet from 'react-helmet'
 
 const pageTransitionEvent = 'gatsby-plugin-page-transition::exit';
 
@@ -87,12 +87,18 @@ class MyPage extends React.Component {
       <PageTransition
     transitionTime={500}
         >
+          <Helmet
+              bodyAttributes={{
+                  class: 'home'
+              }}
+          >
+          </Helmet>
         <div className="index">
           <div className="title">
             <h1 className="title-h1">
-              Timothé
+              Timothé GOSSET
             </h1>
-            <span className="title-span">GOSSET</span>
+            {/* <span className="title-span">GOSSET</span> */}
             <span className="title-pro">
               Web Developer Front-End
             </span>
