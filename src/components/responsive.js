@@ -5,10 +5,9 @@ import anime from 'animejs';
 class Responsive extends React.Component {
 
   componentDidMount() {
-    const isBrowser = typeof window !== 'undefined';
-    isBrowser ? require('scrollreveal') : undefined;
-    window.sr = new ScrollReveal();
-    sr.reveal(
+    const isBrowser = typeof document !== 'undefined';
+    const ScrollReveal = isBrowser ? require('scrollreveal') : undefined;
+    ScrollReveal().reveal(
       '.resp',
       {
         delay: 500,

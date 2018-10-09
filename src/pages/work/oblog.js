@@ -21,15 +21,15 @@ class Oblog extends React.Component {
     on: true,
   }
 
-  // componentDidMount() {
-  //   if (typeof document !== "undefined") {
-  //   ScrollReveal().reveal('.technos', {delay:500});
-  //   ScrollReveal().reveal('.icons', {
-  //     interval: 200,
-  //     delay: 500
-  //   });
-  //   }
-  // }
+  componentDidMount() {
+    const isBrowser = typeof document !== 'undefined';
+    const ScrollReveal = isBrowser ? require('scrollreveal') : undefined;
+    ScrollReveal().reveal('.technos', {delay:500});
+    ScrollReveal().reveal('.icons', {
+      interval: 200,
+      delay: 500
+    });
+  }
 
   render() {
     const datas = carouselData.filter(datas => datas.title === `Oblog`)
