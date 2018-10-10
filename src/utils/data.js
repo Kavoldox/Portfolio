@@ -61,7 +61,7 @@ const carouselData = [
   {
     id: 3,
     path:'omeal',
-    title: `MealOclock`,
+    title: `Omeal`,
     excerpt: 'Site communautaire sur les habitudes alimentaires',
     resume: 'Site communautaire rassemblant les diverses habitudes alimentaires. Vegans, végétariens, vous trouverez des personnes partageant le même régime. Une fois connecté, il est possible de proposer des recettes pour une communauté précise et s\'inscrire à un événement.',
     type: 'Site',

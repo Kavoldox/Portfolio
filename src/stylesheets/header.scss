@@ -42,14 +42,14 @@
 
     .burger {
       padding: 1em;
-      margin: 0.5em;
+      margin: 0.8em;
       color: $sec;
       z-index: 100;
       position: fixed;
       top: 0;
       right: 0;
+      border-radius: 50% 50%;
       background-color: rgba(255, 255, 255, 1);
-      border-radius: 50%;
       // box-shadow: 0em 0.3em 0.5em rgba(0, 0, 0, 0.1);
 
       @media screen and (min-width: 768px) {
@@ -64,7 +64,7 @@
       &-open {
         color: white;
         box-shadow: none;
-        background-color: $dark;
+        background-color: rgba(0, 0, 0, 0);
       }
     }
   }
@@ -72,7 +72,7 @@
   .links {
     position: fixed;
     z-index: 99;
-    top: -60em;
+    top: -70em;
     left: 0;
     height: 100%;
     width: 100%;
@@ -85,9 +85,10 @@
     color: white;
 
     .listlink {
-      margin-top: 10em;
+      height: 60%;
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
       align-items: center;
 
       li a {
@@ -110,22 +111,25 @@
       text-transform: uppercase;
       margin-bottom: 2em;
       @media screen and (min-width: 768px) {
+        margin-bottom: 4em;
         p {
           font-size: 2em;
-          margin: 1em 0 0.5em;
+          margin: 1em 0;
         }
       }
 
       .social {
-        @media screen and (max-width: 1024px) {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         a {
           margin: 2em;
+          &:hover {
+            transform: scale(1.2);
+          }
         }
+
       }
     }
 
@@ -134,7 +138,7 @@
       top: 1;
       height: 100%;
       width: 100%;
-      transform: translateY(60em);
+      transform: translateY(70em);
     }
   }
 
@@ -203,7 +207,6 @@
       a {
         text-decoration: none;
         position: relative;
-        padding: 0.4em 0;
         color:white;
       }
     }

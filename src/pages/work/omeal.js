@@ -23,8 +23,8 @@ class Omeal extends React.Component {
   }
 
   render() {
-    const datas = carouselData.filter(datas => datas.title === `MealOclock`)
-    const works = carouselData.filter(works => works.title !== `MealOclock`)
+    const datas = carouselData.filter(datas => datas.title === `Omeal`)
+    const works = carouselData.filter(works => works.title !== `Omeal`)
     return(
       <PageTransition
     transitionTime={500}

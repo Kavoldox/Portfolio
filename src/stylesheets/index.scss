@@ -27,11 +27,12 @@ body {
   .index {
     overflow: hidden;
     .title {
-      margin: 2em 4em;
       margin: 5em auto;
+      z-index: 3;
       @media screen and (max-width: 1024px) {
         margin: 2em;
         display: flex;
+        height: 80vh;
         flex-direction: column;
         justify-content: space-around;
       }
@@ -61,12 +62,14 @@ body {
         }
       }
       &-pro {
-        font-size: 4em;
+        font-size: 5em;
         float: right;
-        width: 30%;
+        width: 35%;
+        margin: 0 0.5em;
+        position: relative;
+        z-index: 5;
         @media screen and (min-width: 768px) and (max-width: 1024px) {
           font-size: 3em;
-          float: none;
           width: 100%;
         }
         @media screen and (max-width: 768px) {
@@ -80,7 +83,7 @@ body {
 
   h2, h1 {
     color: $purple;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Abril Fatface', cursive;
     font-weight: lighter;
   }
 
@@ -126,7 +129,18 @@ body {
   }
   100% {
     opacity: 1;
-    transform: translateX(-115em);
+    transform: translateX(-70em);
+  }
+}
+
+@keyframes smileyMobile {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-20em);
   }
 }
 
@@ -232,18 +246,24 @@ body {
 }
 
 .smiley {
-  float: right;
+  float: left;
+  z-index: 2;
   position: relative;
-  left: 100em;
-  top: -25em;
-  animation: smiley 5s;
+  left: 120em;
+  top: -15em;
+  animation: smiley 5s 2s;
   animation-fill-mode: forwards;
+  @media screen and (max-width: 1024px) {
+    display: none;
+    left: 20em;
+    animation: smileyMobile 5s 2s;
+  }
 }
 .smileybody {
-  animation: body 5s;
+  animation: body 5s 2s;
 }
 
 .shadow {
-  animation: shadow 5s;
+  animation: shadow 5s 2s;
   animation-fill-mode: forwards;
 }

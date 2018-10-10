@@ -38,7 +38,7 @@ class Responsive extends React.Component {
           .add({
             targets: ['.mac', '.tab', '.phone'],
             easing: 'easeOutExpo',
-            translateY: '50em',
+            translateY: '60em',
             duration: 500,
             delay: function(target, index) {
               // 100ms delay multiplied by every div index, in ascending order

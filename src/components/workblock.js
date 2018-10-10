@@ -25,18 +25,11 @@ class Workblock extends React.Component {
     this.setState({ width: window.innerWidth });
   };
 
- mount = () => {
-   this.setState({ mounted : !this.state.mounted})
- }
-
   render() {
     const { title, resume, type, techno, image, index, activeIndex, length, path, onWheel } = this.props;
     const { width } = this.state;
     const isMobile = width <= 1024;
     return(
-
-      // setTimeout(() => "carousel-active", 1000)
-      // : setTimeout(() => "carousel", 1000)
 
       <div className={
         index == activeIndex ? "carousel-active"
@@ -47,7 +40,6 @@ class Workblock extends React.Component {
           <div className="workblock-left">
             <div className="workblock-left-info">
               <div className="workblock-left-info-number">
-                { isMobile ?
                   <div className="sliding">
                     <FontAwesomeIcon
                       icon='arrow-left'
@@ -73,19 +65,6 @@ class Workblock extends React.Component {
                       onClick={onWheel}
                     />
                   </div>
-                  :
-                  <div className="activeindex">
-                    <CSSTransition
-                      in={activeIndex == index}
-                      timeout={1000}
-                      classNames="example"
-                      unmountOnExit
-                      >
-                        <p>{activeIndex + 1}</p>
-                      </CSSTransition>
-                    <p> / {length}</p>
-                  </div>
-                }
               </div>
               <div className="workblock-left-info-title">
                 <CSSTransition

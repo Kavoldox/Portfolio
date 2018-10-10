@@ -1,6 +1,8 @@
 import React from "react"
 import anime from 'animejs'
 import { navigateTo } from "gatsby-link";
+import validateEmail from 'validate-email';
+import classNames from 'classnames';
 
 import Button from '../components/button.js'
 import '../stylesheets/contact.scss'
@@ -12,11 +14,15 @@ function encode(data) {
 }
 
 class Contact extends React.Component {
+  // state = {
+  // }
   state = {
-    lastname: '',
-    firstname: '',
-    email: '',
-    message: '',
+    lastname: "",
+    firstname: "",
+    email: "",
+    message: "",
+    error: false,
+    focus: false,
   }
 
   onChange = (e) => {
@@ -26,6 +32,21 @@ class Contact extends React.Component {
     this.setState({
       [name]: value,
     })
+
+    if (name === 'email') {
+      const error = !validateEmail(value);
+      this.setState({ error });
+    }
+  }
+
+  handleFocus = () => {
+    this.setState({
+      focus: true,
+    });
+  }
+
+  handleBlur = () => {
+    this.setState({ focus: false });
   }
 
   handleSubmit = e => {
@@ -56,10 +77,66 @@ class Contact extends React.Component {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           >
-          <input type='text' className="field" onChange={this.onChange} value={this.state.lastname} name="lastname" placeholder="Votre nom" />
-          <input type='text' className="field" onChange={this.onChange} value={this.state.firstname} name="firstname" placeholder="Votre prénom" />
-          <input type='text' className="field" onChange={this.onChange} value={this.state.email} name="email" placeholder="Votre adresse e-mail" />
-          <textarea type='textarea' className="field textarea" onChange={this.onChange} value={this.state.message} name="message" placeholder="Votre message" />
+          <input
+            type='text'
+            className={classNames(
+              'field',
+              { 'field-has-value': this.state.lastname !== '' },
+            )}
+            onChange={this.onChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            value={this.state.lastname}
+            name="lastname"
+            placeholder="Votre nom"
+          />
+          <input
+            type='text'
+            className={classNames(
+              'field',
+              { 'field-has-value': this.state.firstname !== '' },
+            )}
+            onChange={this.onChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            value={this.state.firstname}
+            name="firstname"
+            placeholder="Votre prénom"
+          />
+          <input
+            type='text'
+            className={classNames(
+              'field',
+              { 'field-has-value': this.state.email !== '' },
+              { 'field-has-error': this.state.error },
+            )}
+            onChange={this.onChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            value={this.state.email}
+            name="email"
+            placeholder="Votre adresse e-mail"
+          />
+          { this.state.error ?
+            <div className="field-signal">
+              Veuillez entrer une adresse email valide
+            </div>
+            :
+            null
+          }
+          <textarea
+            type='textarea'
+            className={classNames(
+              'field textarea',
+              { 'field-has-value': this.state.message !== '' },
+            )}
+            onChange={this.onChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            value={this.state.message}
+            name="message"
+            placeholder="Votre message"
+          />
           <Button type='submit' name="Envoyer" onSubmit={this.handleSubmit}/>
         </form>
       </div>

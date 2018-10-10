@@ -25,13 +25,6 @@ class Nav extends React.Component {
     this.state.open ? this.animate : null;
   }
 
-  // animate = () => {
-  //   anime({
-  //     targets: '.links-open',
-  //     translateY: '60em',
-  //     direction: 'alternate',
-  //   });
-  // }
   render() {
     const { open } = this.state;
     const currentClassNames = classNames('links', {
@@ -40,6 +33,8 @@ class Nav extends React.Component {
     const burgerClasses = classNames('burger', {
     'burger-open': open,
   });
+
+  console.log(this.props)
     return (
       <div className="header">
         <div className="header-nav">

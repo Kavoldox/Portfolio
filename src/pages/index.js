@@ -42,7 +42,7 @@ class MyPage extends React.Component {
         targets: '.eyes',
         translateY: '-2em',
         duration: 4000,
-        delay: 5000
+        delay: 7000
       })
       .add({
         targets: '.eyes',
@@ -60,16 +60,6 @@ class MyPage extends React.Component {
         translateX: '2em',
         duration: 1000
       })
-    //   .add({
-    //     targets: ['.mac', '.tab', '.phone'],
-    //     easing: 'easeOutExpo',
-    //     translateY: '50em',
-    //     duration: 500,
-    //     delay: function(target, index) {
-    //   // 100ms delay multiplied by every div index, in ascending order
-    //   return index * 300;
-    // },
-    //   })
   }
 
   listenHandler () {
@@ -102,8 +92,8 @@ class MyPage extends React.Component {
             <span className="title-pro">
               Web Developer Front-End
             </span>
-            {/* <svg className='smiley' version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
-            	 width="400px" height="400px" viewBox="0 0 400 400" enableBackground="new 0 0 400 400">
+            <svg className='smiley' version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+            	 width="300px" height="300px" viewBox="0 0 400 400" enableBackground="new 0 0 300 300">
                <g className="smileybody">
                  <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="152.105" y1="180.5024" x2="365.6836" y2="275.6925">
                    <stop  offset="0" style={{'stopColor':"#F1BD36"}}/>
@@ -122,7 +112,7 @@ class MyPage extends React.Component {
               <g className="shadow">
                 <ellipse fill="#231F20" cx="249.251" cy="385.796" rx="64.307" ry="9.05"/>
               </g>
-            </svg> */}
+            </svg>
           </div>
         </div>
       </PageTransition>

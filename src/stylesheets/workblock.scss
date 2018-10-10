@@ -69,6 +69,15 @@
           color: $purple;
           font-weight: bold;
           margin: 0;
+          @media screen and (max-width: 1024px) {
+            font-size: 1.5em;
+          }
+        }
+
+        .burger {
+          @media screen and (min-width: 1024px) {
+            display: none;
+          }
         }
 
         .activeindex {
@@ -86,9 +95,6 @@
             color: $purple;
           }
 
-          @media screen and (max-width: 1024px) {
-            font-size: 1.5em;
-          }
         }
       }
 
