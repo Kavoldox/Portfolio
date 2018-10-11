@@ -17,6 +17,7 @@ export default ({ children }) =>
             class: 'newClassToBody'
         }}
     >
+      <title>Portfolio</title>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
       <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
