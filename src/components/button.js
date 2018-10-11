@@ -43,7 +43,7 @@ class Button extends React.Component {
               <button name={this.props.path} className={buttonClass} onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>{this.props.name}</button>
             </Link>
         :
-        <button className={buttonClass} onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>{this.props.name}</button>
+        <button type={this.props.type} className={buttonClass} onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>{this.props.name}</button>
         }
       </div>
     )
