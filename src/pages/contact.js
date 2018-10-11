@@ -49,20 +49,6 @@ class Contact extends React.Component {
     this.setState({ focus: false });
   }
 
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   const form = e.target;
-  //   // fetch("/", {
-  //   //   method: "POST",
-  //   //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //   //   body: encode({
-  //   //     "form-name": form.getAttribute("name"),
-  //   //     ...this.state
-  //   //   })
-  //   // })
-  //   //   // .then((resp) => (console.log(resp))
-  //   //   .catch(error => alert(error));
-  // };
 
 
   render() {
@@ -70,8 +56,6 @@ class Contact extends React.Component {
       <div className="contact">
         <form
           className="contact-form"
-          onSubmit={this.handleSubmit}
-          // action="mailto:timothgosset@gmail.com"
           name="contact"
           method="post"
           data-netlify="true"
@@ -140,7 +124,6 @@ class Contact extends React.Component {
           <Button
             type='submit'
             name="Envoyer"
-            // onSubmit={this.handleSubmit}
           />
         </form>
       </div>
