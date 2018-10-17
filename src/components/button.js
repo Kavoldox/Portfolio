@@ -8,9 +8,9 @@ class Button extends React.Component {
   state = {
   }
 
-  animate = (name, back, color, border) => {
+  animate = (title, back, color, border) => {
 
-  const el = document.querySelector(`.button-${name}`);
+  const el = document.querySelector(`.button-${title}`);
 
   anime({
     targets: el,
@@ -21,17 +21,18 @@ class Button extends React.Component {
  }
 
  hoverButton = (evt) => {
-  const name = evt.target.name ? evt.target.name : this.props.typeOf;
-  this.animate(name,'#df3940', '#FFF', ['0em','2em']);
+  const title = evt.target.title ? evt.target.title : this.props.typeOf;
+  this.animate(title,'#df3940', '#FFF', ['0em','2em']);
  }
 
  endHoverButton = (evt) => {
-  const name = evt.target.name ? evt.target.name : this.props.typeOf;
-  this.animate(name, '#FFF', '#df3940', '0');
+  const title = evt.target.title ? evt.target.title : this.props.typeOf;
+  this.animate(title, '#FFF', '#df3940', '0');
  }
 
   render() {
     const buttonClass = `button button-${this.props.path}`
+    const buttonClass2 = `button button-${this.props.title}`
     return (
       <div className="button-link">
         {this.props.path ?
@@ -40,10 +41,10 @@ class Button extends React.Component {
               pathname:`/work/${this.props.path}`,
             }}
             >
-              <button name={this.props.path} className={buttonClass} onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>{this.props.name}</button>
+              <button title={this.props.path} className={buttonClass} onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>{this.props.name}</button>
             </Link>
         :
-        <button type={this.props.type} className={buttonClass} onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>{this.props.name}</button>
+        <button title={this.props.title} type={this.props.type} className={buttonClass2} onMouseOver={this.hoverButton} onMouseLeave={this.endHoverButton}>{this.props.name}</button>
         }
       </div>
     )

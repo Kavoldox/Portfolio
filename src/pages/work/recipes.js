@@ -1,6 +1,6 @@
 import React from "react"
 import PageTransition from 'gatsby-plugin-page-transitions'
-import carouselData from '../../utils/data.js';
+import {carouselData} from '../../utils/data.js';
 // import ScrollReveal from 'scrollreveal'
 import anime from 'animejs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -40,7 +40,7 @@ class Recipes extends React.Component {
                       <h1>{data.title}</h1>
                       <p className="type">{data.excerpt}</p>
                       <p className="link">Check the code on
-                        <a href=''>
+                        <a href='https://github.com/Kavoldox/Recettes'>
                           <FontAwesomeIcon
                             icon={['fab', 'github']}
                             transform="grow-10"

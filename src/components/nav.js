@@ -33,8 +33,6 @@ class Nav extends React.Component {
     const burgerClasses = classNames('burger', {
     'burger-open': open,
   });
-
-  console.log(this.props)
     return (
       <div className="header">
         <div className="header-nav">
@@ -53,7 +51,8 @@ class Nav extends React.Component {
         <div className={currentClassNames}>
             <ul className="li listlink" onClick={this.openNav}>
               <ListLink to="/">Home</ListLink>
-              <ListLink to="/work/">Work</ListLink>
+              <ListLink to="/workweb/">Web Work</ListLink>
+              <ListLink to="/workprint/">Print Work</ListLink>
               <ListLink to="/about/">About</ListLink>
               <ListLink to="/contact/">Contact</ListLink>
             </ul>

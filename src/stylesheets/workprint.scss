@@ -1,0 +1,253 @@
+@import "variables.scss";
+
+.workprint {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 2em;
+    width: 15%;
+    font-family: 'Poppins', sans-serif;
+    @media screen and (max-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 1em;
+    }
+    &-nav-active {
+      color: white;
+      background: $sec;
+    }
+
+    &-block {
+      margin: 0.5em;
+      padding: 0.5em;
+      display: flex;
+      position: relative;
+      left: -20em;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: 3px solid $sec;
+      color: $sec;
+      overflow: hidden;
+      transform: translateX(0em);
+      transition: transform 1s;
+      @media screen and (max-width: 768px) {
+        border: none;
+        padding: 0;
+      }
+
+      &:hover {
+        transform: translateX(2em);
+        cursor: pointer;
+        color: white;
+        background: $sec;
+
+        @media screen and (max-width: 768px) {
+          background: white;
+          color: $sec;
+          border-bottom: 2px solid $sec;
+        }
+      }
+
+      &-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        @media screen and (max-width: 768px) {
+          font-size: 1em;
+        }
+
+        h3 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &-packs {
+    color: black;
+    // display: flex;
+    // flex-wrap: wrap;
+    width: 60%;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      margin: auto;
+    }
+
+    &-blocks {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+      &-cat {
+        font-size: 2em;
+        float: left;
+      }
+
+      &-active {
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 3em;
+        @media screen and (max-width: 768px) {
+          overflow:visible;
+          margin: 1em auto;
+          width: 100%;
+          height: 100%;
+        }
+        .title {
+          overflow: hidden;
+          height: 20%;
+          font-size: 3.5em;
+          color: $sec;
+          margin: 0;
+          font-family: 'Poppins', sans-serif;
+          font-weight: bold;
+          @media screen and (max-width: 768px) {
+            font-size: 2em;
+          }
+        }
+
+        .image {
+          width: 80%;
+          margin: 2em auto;
+          @media screen and (max-width: 768px) {
+            width: 100%;
+            margin: 1em auto;
+          }
+        }
+      }
+
+      &-slides {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative;
+        right: -15em;
+        @media screen and (max-width: 768px) {
+          flex-direction: row;
+          margin-bottom: 5em;
+        }
+
+        &-cat {
+          font-size: 5em;
+          float: right;
+        }
+
+        &-block {
+          margin: 0.2em 0.5em;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            // background: $sec;
+            @media screen and (max-width: 768px) {
+              background: none;
+            }
+          }
+
+          &-img {
+            max-width: 6em;
+            max-height: 6em;
+            @media screen and (max-width: 768px) {
+              max-width: 4em;
+              max-height: 4em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.lol-enter {
+  opacity: 0.01;
+}
+
+.lol-enter.lol-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.lol-leave {
+  opacity: 1;
+}
+
+.lol-leave.lol-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.slide-move-enter {
+  opacity: 1;
+  transform: translateX(-15em);
+}
+.slide-move-enter-active {
+  opacity: 1;
+  transform: translateX(0em);
+  transition: all 1000ms 700ms ease-out;
+}
+.slide-move-exit {
+  opacity: 0;
+  display: none;
+  transform: translateX(0em);
+}
+.slide-move-exit-active {
+  opacity: 0;
+  transform: translateX(15em);
+  transition: all 100ms ease-in;
+}
+
+.img-move-enter {
+  opacity: 1;
+  transform: translateX(-70em);
+}
+.img-move-enter-active {
+  opacity: 1;
+  transform: translateX(0em);
+  transition: all 1000ms 700ms ease-out;
+}
+.img-move-exit {
+  opacity: 0;
+  display: none;
+  transform: translateX(0em);
+}
+.img-move-exit-active {
+  opacity: 0;
+  transform: translateX(70em);
+  transition: all 100ms ease-in;
+}
+
+.title-move-enter {
+  opacity: 0.1;
+  transform: translateY(5em);
+}
+.title-move-enter-active {
+  opacity: 1;
+  transform: translateY(0em);
+  transition: all 500ms ease-out;
+}
+.title-move-exit {
+  opacity: 1;
+  transform: translateY(0em);
+}
+.title-move-exit-active {
+  opacity: 1;
+  transform: translateY(-5em);
+  transition: all 500ms ease-in;
+}

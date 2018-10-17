@@ -1,6 +1,6 @@
 import React from 'react'
 
-const carouselData = [
+export const carouselData = [
   {
     id: 1,
     path: 'oblog',
@@ -122,6 +122,265 @@ const carouselData = [
     phone: "recipes/situation-phone-recipes",
     phone2: "recipes/Phone-recipes.png"
   },
-]
+];
 
-export default carouselData;
+export const packagings = [
+  {
+    'name': 'baby',
+    'title': 'Baby',
+    'main': 'mes-premieres-gommettes-animaux.jpg',
+    'packagings': [
+      {
+        'name' : 'Gommettes Animaux',
+        'image': 'mes-premieres-gommettes-animaux.jpg'
+      },
+      {
+        'name' : 'Gommettes Géométriques',
+        'image': 'mes-premieres-gommettes-geometriques.jpg'
+      },
+      {
+        'name' : 'Ma Première Peinture',
+        'image': 'ma-premiere-peinture.jpg'
+      },
+      {
+        'name' : 'Mes Premiers Coloriages',
+        'image': 'mes-premiers-coloriages.jpg'
+      },
+      {
+        'name' : 'Mes Premiers Découpages',
+        'image': 'mes-premiers-decoupages.jpg'
+      },
+      {
+        'name' : 'Mes Premiers Timbres',
+        'image': 'mes-premiers-timbres.jpg'
+      },
+      {
+        'name' : 'Le Petit Artiste',
+        'image': 'coffret-initiation-le-petit-artiste.jpg'
+      },
+    ],
+  },
+  {
+    'name': 'dessin',
+    'title': 'Dessin',
+    'main': 'Scrapbooking.jpg',
+    'packagings': [
+      {
+        'name' : 'Aqua Color',
+        'image': 'aqua-color.jpg'
+      },
+      {
+        'name' : 'Aqua Paint',
+        'image': 'aqua-paint.jpg'
+      },
+      {
+        'name' : 'Foil Art',
+        'image': 'foil-art.jpg'
+      },
+      {
+        'name' : 'Scrapbooking',
+        'image': 'coffret-scrapbooking.jpg'
+      },
+      {
+        'name' : 'Grafiboox',
+        'image': 'grafiboo-x-de-voyage.jpg'
+      },
+      {
+        'name' : 'Atelier de Peinture',
+        'image': 'atelier-de-peinture.jpg'
+      },
+      {
+        'name' : 'Tampons Pirates',
+        'image': 'mallette-tampons-pirates-pm.jpg'
+      },
+      {
+        'name' : 'Tampons Princesses',
+        'image': 'mallette-tampons-princesses-pm.jpg'
+      },
+    ],
+  },
+  {
+    'name': 'travelbox',
+    'title': 'Travel Box',
+    'main': 'Tampons Pirates.jpg',
+    'packagings': [
+      {
+        'name' : 'Cartes A gratter',
+        'image': 'travel-box-cartes-a-gratter.jpg'
+      },
+      {
+        'name' : 'Gourmandises A Pailleter',
+        'image': 'travel-box-gourmandises-a-pailleter.jpg'
+      },
+      {
+        'name' : 'Mandala',
+        'image': 'travel-box-mandala.jpg'
+      },
+      {
+        'name' : 'Mosaix',
+        'image': 'travel-box-mosaix.jpg'
+      },
+      {
+        'name' : 'Tampons Pirates',
+        'image': 'travel-box-tampons-pirates.jpg'
+      },
+      {
+        'name' : 'Tampons Princesses',
+        'image': 'travel-box-tampons-princesses.jpg'
+      },
+      {
+        'name' : 'Tricotin',
+        'image': 'travel-box-tricotin.jpg'
+      },
+    ],
+  },
+  {
+    'name': 'modelage',
+    'title': 'Modelage',
+    'main': 'le-coiffeur.jpg',
+    'packagings': [
+      {
+        'name' : 'Squeezy',
+        'image': '5-pots-12-accessoires-dont-squeezy.jpg'
+      },
+      {
+        'name' : 'Cupcakes',
+        'image': 'carrousel-de-cupcakes.jpg'
+      },
+      {
+        'name' : 'Fabrique de Friandises',
+        'image': 'fabrique-de-friandises.jpg'
+      },
+      {
+        'name' : 'Coiffeur',
+        'image': 'le-coiffeur.jpg'
+      },
+      {
+        'name' : 'Le Lièvre et La Tortue',
+        'image': 'mallette-moulage-le-lievre-et-la-tortue-pm.jpg'
+      },
+      {
+        'name' : 'Sweet Friends',
+        'image': 'mallette-moulage-sweet-friends-pm.jpg'
+      },
+      {
+        'name' : 'Mon Alphabet',
+        'image': 'mon-alphabet.jpg'
+      },
+      {
+        'name' : 'Terra Poterie',
+        'image': 'terra-poterie.jpg'
+      },
+    ],
+  },
+  {
+    'name': 'sciences',
+    'title': 'Sciences',
+    'main': 'creatures-gluantes.jpg',
+    'packagings': [
+      {
+        'name' : 'Botaniste',
+        'image': 'botaniste.jpg'
+      },
+      {
+        'name' : 'Circuits Fous',
+        'image': 'circuits-fous.jpg'
+      },
+      {
+        'name' : 'Corps Humain',
+        'image': 'corps-humain.jpg'
+      },
+      {
+        'name' : 'Baumes A Lèvres',
+        'image': 'creation-de-baumes-a-levres.jpg'
+      },
+      {
+        'name' : 'Créatures Gluantes',
+        'image': 'creatures-gluantes.jpg'
+      },
+      {
+        'name' : 'Découverte des Parfums',
+        'image': 'decouverte-des-parfums.jpg'
+      },
+      {
+        'name' : 'Horribles Champignons',
+        'image': 'horribles-champignons.jpg'
+      },
+      {
+        'name' : 'Kitchen Lab',
+        'image': 'kitchen-lab.jpg'
+      },
+      {
+        'name' : 'Savant Fou',
+        'image': 'savant-fou.jpg'
+      },
+    ],
+  },
+  {
+    'name': 'recharges',
+    'title': 'Recharges',
+    'main': 'recharge-bougies.jpg',
+    'packagings': [
+      {
+        'name' : 'Recharge Bougies',
+        'image': 'recharge-bougies.jpg'
+      },
+      {
+        'name' : 'Recharge Pain Argile',
+        'image': 'recharge-pain-d-argile.jpg'
+      },
+      {
+        'name' : 'Recharge Pate A Sel',
+        'image': 'recharge-pate-a-sel.jpg'
+      },
+      {
+        'name' : 'Recharge Platre',
+        'image': 'recharge-platre.jpg'
+      },
+    ],
+  },
+  {
+    'name': 'girl',
+    'title': 'Girl',
+    'main': 'mon-atelier-de-couture.jpg.jpg',
+    'packagings': [
+      {
+        'name' : 'Atelier de Couture',
+        'image': 'mon-atelier-de-couture.jpg'
+      },
+      {
+        'name' : 'Atelier de Stylisme',
+        'image': 'atelier-de-stylisme.jpg'
+      },
+      {
+        'name' : 'Secret Box',
+        'image': 'secret-box.jpg'
+      },
+      {
+        'name' : 'Bijoux Création',
+        'image': 'bijoux-creation.jpg'
+      },
+    ],
+  },
+  {
+    'name': 'bougies',
+    'title': 'Bougies',
+    'main': 'super-candellissimo.jpg',
+    'packagings': [
+      {
+        'name' : 'Super Candellissimo',
+        'image': 'super-candellissimo.jpg'
+      },
+      {
+        'name' : 'Bougies Féeriques',
+        'image': 'bougies-feeriques.jpg'
+      },
+      {
+        'name' : 'Atelier de Bougies',
+        'image': 'atelier-de-bougies.jpg'
+      },
+    ],
+  },
+];
+
+export default { carouselData, packagings };
