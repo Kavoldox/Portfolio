@@ -57,6 +57,7 @@ class CarouselPacks extends React.Component {
                 <h4 className="title">{name}</h4>
               </CSSTransition>
             </TransitionGroup>
+                  {/* <div className="title-border"/> */}
           <TransitionGroup>
           <CSSTransition
             key={activeIndex}

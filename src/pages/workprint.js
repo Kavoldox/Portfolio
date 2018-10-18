@@ -14,7 +14,7 @@ state = {
 componentDidMount() {
   anime({
     targets: '.workprint-nav-block',
-    translateX: '20em',
+    translateX: '25em',
     delay: function(target, index) {
       // 100ms delay multiplied by every div index, in ascending order
       return index * 200;

@@ -56,7 +56,7 @@ body {
       @media screen and (max-width: 1024px) {
         margin: 2em;
         display: flex;
-        height: 80vh;
+        // height: 80vh;
         flex-direction: column;
         justify-content: space-around;
       }
@@ -110,6 +110,7 @@ body {
           height: 85%;
           position: relative;
           top: -10em;
+          margin-right: 1.5em;
           background-color: white;
           @media screen and (max-width: 768px) {
             width: 0.2em;
@@ -120,7 +121,7 @@ body {
           font-size: 3em;
           // float: right;
           // width: 35%;
-          margin: 0 0.5em;
+          margin: 0;
           position: relative;
           left: -25em;
           z-index: 5;

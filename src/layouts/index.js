@@ -3,9 +3,9 @@ import Link from "gatsby-link";
 import Helmet from 'react-helmet'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faHandPaper, faPencilRuler, faCode, faWrench,  faBars, faTimes, faArrowRight, faArrowLeft, faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faHandPaper, faPencilRuler, faCode, faWrench,  faBars, faTimes, faArrowRight, faArrowLeft, faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab, faHandPaper, faPencilRuler, faCode, faWrench, faBars, faTimes, faArrowRight, faArrowLeft, faLongArrowAltDown)
+library.add(fab, faCheck, faHandPaper, faPencilRuler, faCode, faWrench, faBars, faTimes, faArrowRight, faArrowLeft, faLongArrowAltDown)
 
 import Nav from '../components/nav.js';
 import "../stylesheets/index.scss"

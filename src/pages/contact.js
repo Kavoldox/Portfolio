@@ -2,6 +2,7 @@ import React from "react"
 import anime from 'animejs'
 import { navigateTo } from "gatsby-link";
 import validateEmail from 'validate-email';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
 import Button from '../components/button.js'
@@ -55,10 +56,84 @@ class Contact extends React.Component {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: encode({ "form-name": "contact", ...this.state })
         })
-          .then(() => alert("Success!"))
+          .then(() => basicTimeline)
           .catch(error => alert(error));
 
+          this.setState({ submitted: true })
+
         e.preventDefault();
+
+        var basicTimeline = anime.timeline()
+
+        // var pathEls = document.getElementById('check');
+        // console.log(pathEls)
+// for (var i = 0; i < pathEls.length; i++) {
+//   var pathEl = pathEls[i];
+//   var offset = anime.setDashoffset(pathEl);
+//   pathEl.setAttribute("stroke-dashoffset", offset);
+// }
+//
+basicTimeline
+  .add({
+    targets: ".circle",
+    // backgroundColor: "#de3940",
+    width: "100%",
+    height: "100%",
+    duration: 300,
+    marginTop: '10em',
+  })
+  .add({
+    targets: ".circle-check",
+    borderRadius: ['50%', '50%'],
+    backgroundColor: "#de3940",
+    opacity: 1,
+    duration: 1000,
+  })
+  .add({
+    targets: ".circle-message",
+    color: "#de3940",
+    opacity: 1,
+    duration: 1000,
+  })
+//   .add({
+//     targets: pathEl,
+//     strokeDashoffset: [offset, 0],
+//     duration: 200,
+//     easing: "easeInOutSine"
+//   });
+
+        // const submitTimeLine = anime.timeline();
+        //
+        //   submitTimeLine
+        //   .add({
+        //     targets: '.contact-form',
+        //     opacity: 0,
+        //     height: 0,
+        //     translateX: '50em',
+        //     duration: 1000,
+        //   })
+        //   .add({
+        //     targets: '.success-check',
+        //     translateX: '-50em',
+        //     // opacity: 1,
+        //     // borderRadius: ['50%', '50%'],
+        //     // padding: '1em',
+        //     // backgroundColor: '#de3940',
+        //     // fontSize: '3em',
+        //     // height: '5em',
+        //     // width: '5em',
+        //     // margin: '5em auto',
+        //     // duration: 1000,
+        //     // delay: 500,
+        //     // easing: 'easeInOutQuad'
+        //   })
+        //   // .add({
+        //   //   targets: '.title-pro-pro',
+        //   //   translateX: '25em',
+        //   //   duration: 1000,
+        //   //   delay: 500,
+        //   //   easing: 'easeInOutQuad'
+        //   // })
       };
 
 
@@ -67,6 +142,10 @@ class Contact extends React.Component {
       <div className="contact">
         <form
           className="contact-form"
+          className={classNames(
+            'contact-form',
+            { 'contact-form-submitted': this.state.submitted },
+          )}
           onSubmit={this.handleSubmit}
           name="contact"
           method="post"
@@ -134,11 +213,27 @@ class Contact extends React.Component {
             name="message"
             placeholder="Votre message"
           />
-          <Button
-            type='submit'
-            name="Envoyer"
-          />
+          <div className='lol'>
+            <Button
+              type='submit'
+              name="Envoyer"
+              >
+                {/* <svg x="0px" y="0px"
+                viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
+                <path id="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2"/>
+              </svg> */}
+            </Button>
+          </div>
         </form>
+        <div className='circle'>
+          <FontAwesomeIcon
+            icon='check'
+            transform="grow-25"
+            className="circle-check"
+            color= 'white'
+          />
+          <p className="circle-message">Votre message a été envoyé</p>
+        </div>
       </div>
     )
   }

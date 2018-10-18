@@ -39,55 +39,27 @@ class MyPage extends React.Component {
     const titleTimeLine = anime.timeline();
 
       titleTimeLine
-      // .add({
-      //   targets: '.title-h1-span',
-      //   rotate: '1turn',
-      //   duration: 1000,
-      //   delay: 1000,
-      //   easing: 'easeInOutQuad'
-      // })
       .add({
         targets: '.title-h1',
         translateY: '5em',
         duration: 1000,
-        delay: function(el, i, l) {
-          return i * 1000;
-        },
+        delay: 1000,
         easing: 'easeInOutQuad'
       })
-      // .add({
-      //   targets: '.title-h1-span',
-      //   translateY: '5em',
-      //   duration: 1000,
-      //   delay: 1000,
-      //   easing: 'easeInOutQuad'
-      // })
       .add({
         targets: '.title-pro-line',
         translateY: '10em',
         duration: 1000,
-        delay: 1000,
+        delay: 500,
         easing: 'easeInOutQuad'
       })
       .add({
         targets: '.title-pro-pro',
         translateX: '25em',
         duration: 1000,
-        delay: 500,
+        delay: 200,
         easing: 'easeInOutQuad'
       })
-      // .add({
-      //   targets: '.eyes',
-      //   opacity: 1,
-      //   duration: 2000,
-      // })
-      // .add({
-      //   targets: '.eyes',
-      //   translateY: '0em',
-      //   translateX: '2em',
-      //   duration: 1000
-      // })
-
 
     // const titleTimeLine = anime.timeline();
     //

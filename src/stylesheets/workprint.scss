@@ -10,6 +10,7 @@
   @media screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
+    align-items: center;
   }
 
   &-nav {
@@ -17,57 +18,69 @@
     flex-direction: column;
     margin: 1em 2em;
     width: 15%;
-    font-family: 'Poppins', sans-serif;
+    color: $grey;
+    font-family: 'Open Sans Condensed', sans-serif;
     @media screen and (max-width: 768px) {
-      flex-direction: row;
+      // flex-direction: row;
       flex-wrap: wrap;
-      width: 100%;
-      margin: 1em;
+      align-items: center;
+      width: 95%;
+      height: 30vh;
+      margin: 1em auto;
     }
+
     &-nav-active {
       color: white;
-      background: $sec;
+      background: $purple;
     }
 
     &-block {
       margin: 0.5em;
-      padding: 0.5em;
+      padding: 0.5em 1em;
       display: flex;
       position: relative;
-      left: -20em;
+      left: -25em;
       flex-direction: column;
       justify-content: space-between;
-      border-bottom: 3px solid $sec;
-      color: $sec;
-      overflow: hidden;
-      transform: translateX(0em);
-      transition: transform 1s;
+      background: $white;
+      border-radius: 3px;
+      border: 1px solid $purple;
+      color: $purple;
       @media screen and (max-width: 768px) {
-        border: none;
-        padding: 0;
+        padding: 0.5em;
+        margin: 0.5em;
+        width: 20%;
+        align-items: center;
+      }
+      @media screen and (min-width: 768px) and (max-height: 1024px){
+        width: 40%;
       }
 
       &:hover {
-        transform: translateX(2em);
+        background: $gradient;
+        border-radius: 3px;
         cursor: pointer;
         color: white;
-        background: $sec;
+        border: 1px solid white;
 
         @media screen and (max-width: 768px) {
-          background: white;
-          color: $sec;
-          border-bottom: 2px solid $sec;
+          background: $gradient;
+          color: $white;
+          border-bottom: 1px solid $white;
         }
       }
 
       &-title {
         font-size: 1.5em;
-        font-weight: bold;
         @media screen and (max-width: 768px) {
           font-size: 1em;
         }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          font-size: 1.5em;
+        }
 
         h3 {
+          font-weight: lighter;
           margin: 0;
         }
       }
@@ -88,7 +101,6 @@
     &-blocks {
       width: 100%;
       display: flex;
-      justify-content: space-between;
       overflow: hidden;
       @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -115,12 +127,23 @@
           overflow: hidden;
           height: 20%;
           font-size: 3.5em;
-          color: $sec;
+          font-weight: lighter;
           margin: 0;
-          font-family: 'Poppins', sans-serif;
-          font-weight: bold;
-          @media screen and (max-width: 768px) {
-            font-size: 2em;
+          color: $purple;
+          font-family: 'Abril Fatface', cursive;
+          @media screen and (max-width: 767px) {
+            font-size: 2.5em;
+          }
+
+          &-border {
+            width: 20%;
+            height: 0.5em;
+            margin: 2em 2em 0;
+            background: $gradient;
+            @media screen and (max-width: 1024px) {
+              margin: 2em;
+              width: 35%;
+            }
           }
         }
 
@@ -140,9 +163,11 @@
         flex-wrap: wrap;
         position: relative;
         right: -15em;
+        height: 80vh;
         @media screen and (max-width: 768px) {
           flex-direction: row;
           margin-bottom: 5em;
+          height: 100%;
         }
 
         &-cat {
@@ -154,7 +179,7 @@
           margin: 0.2em 0.5em;
           &:hover {
             cursor: pointer;
-            transform: scale(1.2);
+            transform: scale(1.3);
             // background: $sec;
             @media screen and (max-width: 768px) {
               background: none;
@@ -164,9 +189,14 @@
           &-img {
             max-width: 6em;
             max-height: 6em;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 767px) {
               max-width: 4em;
               max-height: 4em;
+            }
+            @media screen and (min-width: 768px) and (max-height: 1024px){
+              flex-direction: row;
+              margin-bottom: 5em;
+              height: 100%;
             }
           }
         }
@@ -232,6 +262,25 @@
   transform: translateX(70em);
   transition: all 100ms ease-in;
 }
+
+// .border-move-enter {
+//   opacity: 0.1;
+//   transform: translateX(-10em);
+// }
+// .border-move-enter-active {
+//   opacity: 1;
+//   transform: translateX(0em);
+//   transition: all 500ms ease-out;
+// }
+// .border-move-exit {
+//   opacity: 1;
+//   transform: translateX(0em);
+// }
+// .border-move-exit-active {
+//   opacity: 1;
+//   transform: translateX(-5em);
+//   transition: all 500ms ease-in;
+// }
 
 .title-move-enter {
   opacity: 0.1;
