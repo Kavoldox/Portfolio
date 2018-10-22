@@ -155,7 +155,7 @@ class About extends React.Component {
               transform="grow-1"
               className='about-pres-icon'
             /> */}
-            <p>J'habite en Normandie et je suis développeur web. Ayant un baguage marketing et graphique, et passionné par le design et l'intéraction,
+            <p>J'habite en Normandie et je suis développeur web. Ayant un bagage marketing et graphique, et passionné par le design et l'intéraction,
               j'axe mon travail en développement web côté front. </p>
             <div className="about-pres-icons">
               <a href="https://github.com/Kavoldox" target="_blank">
