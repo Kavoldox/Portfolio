@@ -140,10 +140,10 @@ body {
           z-index: 5;
           overflow: hidden;
           @media screen and (min-width: 768px) and (max-width: 1024px) {
-            font-size: 0.8em;
-            width: 100%;
+            font-size: 0.5em;
+            width: 80%;
           }
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 767px) {
             font-size: 0.5em;
             float: none;
             width: 100%;
