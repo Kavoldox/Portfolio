@@ -26,7 +26,7 @@ class Workblock extends React.Component {
   };
 
   render() {
-    const { title, resume, type, techno, image, index, activeIndex, length, path, onWheel } = this.props;
+    const { title, resume, type, techno, image, index, activeIndex, length, path, onWheel, goToPrevSlide, goToNextSlide } = this.props;
     const { width } = this.state;
     const isMobile = width <= 1024;
     return(
@@ -45,7 +45,7 @@ class Workblock extends React.Component {
                       icon='arrow-left'
                       transform="grow-8"
                       className="burger"
-                      onClick={onWheel}
+                      onClick={goToPrevSlide}
                     />
                     <div className="activeindex">
                       <CSSTransition
@@ -62,7 +62,7 @@ class Workblock extends React.Component {
                       icon='arrow-right'
                       transform="grow-8"
                       className="burger"
-                      onClick={onWheel}
+                      onClick={goToNextSlide}
                     />
                   </div>
               </div>
