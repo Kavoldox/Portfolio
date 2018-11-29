@@ -24,6 +24,7 @@ onWheel = (e) => {
 }
 
 goToPrevSlide = (e) => {
+  console.log('lo')
 
   e.preventDefault();
 
@@ -61,6 +62,8 @@ goToNextSlide = (e) => {
                   index={index}
                   length={length}
                   onWheel={this.onWheel}
+                  goToNextSlide={this.goToNextSlide}
+                  goToPrevSlide={this.goToPrevSlide}
                   activeIndex={this.state.activeIndex}
                   {...data}
                 />
