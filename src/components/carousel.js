@@ -24,7 +24,6 @@ onWheel = (e) => {
 }
 
 goToPrevSlide = (e) => {
-  console.log('lo')
 
   e.preventDefault();
 
